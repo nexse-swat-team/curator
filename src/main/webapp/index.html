@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Curator :: Nexse SWAT Team</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,17 +33,19 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">curator</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
     <div class="container">
+
+        <div>
+            <form class="well form-inline">
+              <label>Twitter screen name:</label>
+              <input type="text" class="span2" value="NexseSwatTeam" id="twitterScreenName">
+              <input type="submit" value="refresh" id="refreshButton"/>
+            </form>
+        </div>
 
         <div id="tweets"></div>
 
@@ -56,9 +58,12 @@
     <script src="js/bootstrap-2.0.2.js"></script>
     <script src="js/twitterlib-1.0.8.js"></script>
     <script>
-        $(document).ready(function () {
+        function refreshTweets() {
             var count = 0, limit = 2;
-            twitterlib.timeline('NexseSwatTeam', { limit:5 }, function (tweets) {
+            var twitterScreenName = $('#twitterScreenName')[0].value;
+            $('#tweets').html(''); // cleanup
+
+            twitterlib.timeline(twitterScreenName, {limit:5}, function (tweets) {
                 for (var i = 0; i < tweets.length; i++) {
                     $('#tweets').append('<li>' + this.ify.clean(tweets[i].text) + ' ' + tweets[i].created_at + '</li>\n');
                 }
@@ -68,7 +73,13 @@
                     this.next();
                 }
             });
-        });
+        }
+
+        $(document).ready(refreshTweets);
+        $('#refreshButton').click(function (event) {
+            event.preventDefault();
+            refreshTweets();
+        })
     </script>
   </body>
 </html>
