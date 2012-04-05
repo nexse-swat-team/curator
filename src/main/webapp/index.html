@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Curator :: Nexse SWAT Team</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Curator is a web based newsletter manager with input from twitter">
+    <meta name="author" content="The Nexse SWAT Team">
 
     <!-- Le styles -->
     <link href="css/bootstrap-2.0.2.css" rel="stylesheet">
@@ -15,6 +15,7 @@
       }
     </style>
     <link href="css/bootstrap-responsive-2.0.2.css" rel="stylesheet">
+    <link href="css/curator.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -47,7 +48,12 @@
             </form>
         </div>
 
-        <div id="tweets"></div>
+        <div class="row">
+            <div class="span4">
+                <div id="tweets">Tweets be here.</div>
+            </div>
+            <div class="span8">Newsletter be here.</div>
+        </div>
 
     </div> <!-- /container -->
 
@@ -59,17 +65,17 @@
     <script src="js/twitterlib-1.0.8.js"></script>
     <script>
         function refreshTweets() {
-            var count = 0, limit = 2;
+            var count = 0, lim = 2;
             var twitterScreenName = $('#twitterScreenName')[0].value;
-            $('#tweets').html(''); // cleanup
+            $('#tweets').html('&nbsp;'); // cleanup
 
-            twitterlib.timeline(twitterScreenName, {limit:5}, function (tweets) {
+            twitterlib.timeline(twitterScreenName, {limit:5, rts: true}, function (tweets, options) {
                 for (var i = 0; i < tweets.length; i++) {
-                    $('#tweets').append('<li>' + this.ify.clean(tweets[i].text) + ' ' + tweets[i].created_at + '</li>\n');
+                    $('#tweets').append(this.render(tweets[i]));
                 }
 
                 count++;
-                if (count < limit) {
+                if (count < lim) {
                     this.next();
                 }
             });
