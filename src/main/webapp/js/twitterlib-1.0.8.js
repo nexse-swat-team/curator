@@ -501,8 +501,7 @@
       if (def && def.substr(1) == 'remove' && options[key] == undefined) {
         return '';
       }
-      var val = key == 'limit' ? options[key] + 10 : options[key];
-      return q + (options[key] === undefined && def !== undefined ? def.substr(1) : val);
+      return q + (options[key] === undefined && def !== undefined ? def.substr(1) : options[key]);
     });
   }
   
