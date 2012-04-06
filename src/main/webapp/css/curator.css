@@ -12,3 +12,9 @@
 .hentry .meta { font-size: 0.764em; margin: 3px 0 0; display: block; }
 #tweets a { color: #00f; }
 .hentry .meta, #tweets .meta a { color: #999; }
+
+/* newsletter styles */
+#newsletter {
+    background-color: #F5F5F5;
+    border-radius: 1.4%;
+}
