@@ -25,7 +25,9 @@ var curator = {
         html += '</ul></section>';
         $('#newsletter').html(html);
         $('#twitterForm').fadeOut(600, function() {
-            $('#newsletterForm').fadeIn();
+            $('#newsletterForm').fadeIn(600, function() {
+                $('#sendHelp').fadeOut(20000);
+            });
         });
     },
     refreshTweets:function () {
