@@ -17,10 +17,13 @@ var curator = {
         $('#tweet' + tweetId).slideUp();
     },
     refreshNewsletter:function () {
-        $('#newsletter').html('');
+        var html = '<section><h1>' + $('#newsletterName')[0].value + '</h1><ul>';
+
         $.each(curator.selectedTweetIds, function (index, tweetId) {
-            $('#newsletter').append(curator.renderForNewsletter(curator.tweets[tweetId]));
+            html += curator.renderForNewsletter(curator.tweets[tweetId]);
         });
+        html += '</ul></section>';
+        $('#newsletter').html(html);
         $('#twitterForm').fadeOut(600, function() {
             $('#newsletterForm').fadeIn();
         });

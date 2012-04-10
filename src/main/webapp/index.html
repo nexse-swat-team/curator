@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <title>Curator :: Nexse SWAT Team</title>
@@ -9,6 +9,7 @@
 
     <link href="css/bootstrap-2.0.2.css" rel="stylesheet">
     <link href="css/bootstrap-responsive-2.0.2.css" rel="stylesheet">
+    <link href="css/jquery-fancybox-2.0.5.css" rel="stylesheet">
     <link href="css/curator.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -67,9 +68,32 @@
           </div>
       </div>
 
+      <footer>
+          <small>
+              &copy; The <a href="http://swat.nexse.com/" target="_blank">Nexse SWAT Team</a>.
+              Get <a href="https://github.com/nexse-swat-team/curator" target="_blank">curator on GitHub</a>.
+              Made with <a href="http://twitter.github.com/bootstrap/" target="_blank">bootstrap</a>,
+              <a href="http://jquery.com/" target="_blank">jQuery</a>,
+              <a href="http://fancyapps.com/fancybox/" target="_blank">fancyBox</a>,
+              <a href="https://github.com/remy/twitterlib" target="_blank">twitterlib</a>
+              and elbow grease.
+          </small>
+      </footer>
+
   </div> <!-- /container -->
 
+  <div style="display: none;" id="mailForm">
+      <form>
+          <label>Send newsletter to:
+              <textarea cols="60" rows="8" placeholder="joe@acme.com"></textarea>
+          </label>
+          <input type="submit" value="send"/>
+      </form>
+  </div>
+
+
     <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/jquery-fancybox-2.0.5.js"></script>
     <script src="js/bootstrap-2.0.2.js"></script>
     <script src="js/twitterlib-1.0.8.js"></script>
     <script src="js/curator.js"></script>
@@ -83,6 +107,10 @@
         $('#twitterRefreshButton').click(function (event) {
             event.preventDefault();
             curator.refreshTweets();
+        });
+        $('#newsletterSendButton').click(function (event) {
+            event.preventDefault();
+            $.fancybox($('#mailForm'));
         });
     </script>
   </body>
