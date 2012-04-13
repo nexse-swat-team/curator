@@ -63,8 +63,8 @@ var curator = {
         html += '<span class="entry-content">';
         html += twitterlib.ify.clean(twitterlib.expandLinks(tweet));
         html += '</span> <span class="meta entry-meta">';
-        html += '<button class="btn btn-mini" onclick="curator.add(' + tweet.id + ');"><i class="icon-ok-sign"></i></button> ';
-        html += '<button class="btn btn-mini" onclick="curator.ignore(' + tweet.id + ');"><i class="icon-remove-sign"></i></button> ';
+        html += '<button class="btn btn-mini" onclick="curator.add(' + tweet.id + ');"><i class="icon-ok-sign"></i> add</button> ';
+        html += '<button class="btn btn-mini" onclick="curator.ignore(' + tweet.id + ');"><i class="icon-remove-sign"></i> ignore</button> ';
         html += '<a href="http://twitter.com/' + tweet.user.screen_name;
         html += '/status/' + tweet.id_str + '" class="entry-date" rel="bookmark"><span class="published" title="';
         html += twitterlib.time.datetime(tweet.created_at) + '">' + twitterlib.time.relative(tweet.created_at) + '</span></a>';
@@ -84,6 +84,8 @@ if (curatorConfig.debug) {
 
 $('#newsletterName')[0].value = curatorConfig.newsletterName;
 $('#twitterScreenName')[0].value = curatorConfig.twitterScreenName;
+$('#mailFrom')[0].value = curatorConfig.mailFrom;
+$('#mailSubject')[0].value = curatorConfig.mailSubjectPrefix + curatorConfig.newsletterName;
 
 $(document).ready(function () {
     curator.refreshTweets();
