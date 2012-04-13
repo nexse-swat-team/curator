@@ -75,3 +75,21 @@ var curator = {
         return html;
     }
 };
+
+if (curatorConfig.debug) {
+    twitterlib.debug({
+      timeline: 'test-data/timeline%page%.json?callback=callback'
+    });
+}
+
+$('#newsletterName')[0].value = curatorConfig.newsletterName;
+$('#twitterScreenName')[0].value = curatorConfig.twitterScreenName;
+
+$(document).ready(function () {
+    curator.refreshTweets();
+});
+
+$('#twitterRefreshButton').click(function (event) {
+    event.preventDefault();
+    curator.refreshTweets();
+});

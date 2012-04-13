@@ -9,7 +9,6 @@
 
     <link href="css/bootstrap-2.0.2.css" rel="stylesheet">
     <link href="css/bootstrap-responsive-2.0.2.css" rel="stylesheet">
-    <link href="css/jquery-fancybox-2.0.5.css" rel="stylesheet">
     <link href="css/curator.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -50,9 +49,9 @@
           </form>
           <form class="well form-inline" style="display: none;" id="newsletterForm">
               <label>Newsletter's name:
-                  <input type="text" class="span2" value="Cum Grano Salis" id="newsletterName"/>
+                  <input type="text" class="span2" id="newsletterName"/>
               </label>
-              <input type="submit" value="send" id="newsletterSendButton"/>
+              <input type="submit" value="send" id="newsletterSendButton" data-toggle="modal" data-target="#newsletterSendModal"/>
               <span class="label label-info" id="sendHelp">
                   <i class="icon-chevron-left"></i>
                   Once you're finished composing the newsletter, push the <em>send</em> button to send emails.
@@ -78,7 +77,6 @@
               Get <a href="https://github.com/nexse-swat-team/curator" target="_blank">curator on GitHub</a>.
               Made with <a href="http://twitter.github.com/bootstrap/" target="_blank">bootstrap</a>,
               <a href="http://jquery.com/" target="_blank">jQuery</a>,
-              <a href="http://fancyapps.com/fancybox/" target="_blank">fancyBox</a>,
               <a href="https://github.com/remy/twitterlib" target="_blank">twitterlib</a>
               and elbow grease.
           </small>
@@ -86,36 +84,27 @@
 
   </div> <!-- /container -->
 
-  <div style="display: none;" id="mailForm">
-      <form>
-          <label>Send newsletter to:
-              <textarea cols="60" rows="8" placeholder="joe@acme.com"></textarea>
-          </label>
-          <input type="submit" value="send"/>
-      </form>
+  <div class="modal fade" id="newsletterSendModal" style="display: none;">
+      <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>Send the newsletter</h3>
+      </div>
+      <div class="modal-body">
+          <form>
+              <label>Send newsletter to:
+                  <textarea cols="60" rows="8" placeholder="joe@acme.com"></textarea>
+              </label>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <a href="#" class="btn btn-primary">Send</a>
+      </div>
   </div>
 
-
-    <script src="js/jquery-1.7.2.js"></script>
-    <script src="js/jquery-fancybox-2.0.5.js"></script>
-    <script src="js/bootstrap-2.0.2.js"></script>
-    <script src="js/twitterlib-1.0.8.js"></script>
-    <script src="js/curator.js"></script>
-    <script>
-        twitterlib.debug({
-          timeline: 'test-data/timeline%page%.json?callback=callback'
-        });
-        $(document).ready(function () {
-            curator.refreshTweets();
-        });
-        $('#twitterRefreshButton').click(function (event) {
-            event.preventDefault();
-            curator.refreshTweets();
-        });
-        $('#newsletterSendButton').click(function (event) {
-            event.preventDefault();
-            $.fancybox($('#mailForm'));
-        });
-    </script>
+  <script src="js/jquery-1.7.2.js"></script>
+  <script src="js/bootstrap-2.0.2.js"></script>
+  <script src="js/twitterlib-1.0.8.js"></script>
+  <script src="js/curator-config.js"></script>
+  <script src="js/curator.js"></script>
   </body>
 </html>
