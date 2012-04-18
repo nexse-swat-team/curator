@@ -10,4 +10,33 @@
         <property name="host" value="${smtp.host}"/>
     </bean>
 
+    <!-- this is an example alt configuration for an ssl/tls smtp server -->
+    <!--
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="mail.acme.com"/>
+        <property name="port" value="465"/>
+        <property name="username" value="scott"/>
+        <property name="password" value="tiger"/>
+        <property name="protocol" value="smtps"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.connectiontimeout">5000</prop>
+                <prop key="mail.smtp.sendpartial">true</prop>
+                <prop key="mail.smtp.userset">true</prop>
+                <prop key="mail.mime.charset">UTF-8</prop>
+                <prop key="mail.smtp.isSecure">true</prop>
+                <prop key="mail.smtp.requiresAuthentication">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.port">465</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.socketFactory.fallback">false</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+    -->
+
 </beans>
