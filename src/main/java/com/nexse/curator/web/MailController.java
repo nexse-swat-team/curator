@@ -29,8 +29,8 @@ public class MailController {
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
             public void prepare(MimeMessage mimeMessage) throws Exception {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-                message.setTo(emailToSend.getReceivers().toArray(new String[emailToSend.getReceivers().size()]));
-                message.setFrom("swat@nexse.com");
+                message.setBcc(emailToSend.getReceivers().toArray(new String[emailToSend.getReceivers().size()]));
+                message.setFrom(emailToSend.getSender());
                 message.setSubject(emailToSend.getSubject());
                 message.setText(emailToSend.getBody(), true);
             }
