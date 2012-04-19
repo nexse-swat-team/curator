@@ -1,10 +1,10 @@
 
+![screenshot][screenshot]
+
 Curator is an application to create email newsletters from a twitter feed.
 
 It is implemented in html/css/js and requires a rest backend for sending
 emails.
-
-Here is a ![screenshot][screenshot].
 
 You can open the src/main/webapp/index.html file locally in your browser to
 play around with the application but you will not be able to actually send any
