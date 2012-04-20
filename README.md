@@ -19,6 +19,12 @@ Edit the file src/main/resources/META-INF/spring/smtp.properties to configure a 
     $ mvn tomcat:run
     $ your-browser http://localhost:8080/curator
 
+## Built with
+
+  * [Bootstrap](http://twitter.github.com/bootstrap/)
+  * [jQuery](http://jquery.com/)
+  * [twitterlib.js](https://github.com/remy/twitterlib/)
+
 Enjoy! :)
 
 [screenshot]: https://github.com/nexse-swat-team/curator/raw/master/screenshot.png  "Screenshot"
