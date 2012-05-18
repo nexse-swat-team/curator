@@ -3,37 +3,35 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
-    'views/daCanaleList',
-    'views/normalizzatoList',
-    'models/daCanale',
-    'models/daLavorare',
+    'views/channelDataList',
+    'views/enrichedDataList',
+    'models/channelData',
+    'models/enrichedData',
     'models/newsletter'
-], function ($, _, Backbone, DaCanaleListView, NormalizzatoListView, daCanale, daLavorareModule, newsletter) {
+], function ($, _, Backbone, ChannelDataListView, EnrichedDataListView, channelData, enrichedDataModule, newsletter) {
     var AppRouter = Backbone.Router.extend({
         routes:{
-            'lavorazione':'lavorazioneAction',
-            'generaNewsletter':'generaNewsletterAction',
+            'enrich':'enrichAction',
+            "createNewsletter":'createNewsletterAction',
             // Default
             '*actions':'defaultAction'
         },
         defaultAction:function (actions) {
-            var mainView, daCanaleCollection;
-            // We have no matching route, lets display the home page
-            daCanaleCollection = new daCanale.DaCanaleCollection();
-            daCanaleCollection.fetch({
+            var channelDataCollection = new channelData.ChannelDataCollection();
+            channelDataCollection.fetch({
                     success:function () {
-                        new DaCanaleListView({model:daCanaleCollection}).render();
+                        new ChannelDataListView({model:channelDataCollection}).render();
                     }
                 }
 
             )
         },
-        lavorazioneAction:function(){
-            var normalizzatoList = new NormalizzatoListView({model: daLavorareModule.daLavorareCollection});
-            normalizzatoList.render();
+        enrichAction:function(){
+            var enrichedDataListView = new EnrichedDataListView({model: enrichedDataModule.enrichedDataCollection});
+            enrichedDataListView.render();
         },
-        generaNewsletterAction:function(){
-            newsletter=_.groupBy(daLavorareModule.daLavorareCollection.models, function(model){
+        createNewsletterAction:function(){
+            newsletter=_.groupBy(enrichedDataModule.enrichedDataCollection.models, function(model){
                 return model.get("category");
             });
         }

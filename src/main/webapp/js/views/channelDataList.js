@@ -2,28 +2,27 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
-    'views/normalizzatoListRow',
-    'text!templates/normalizzatoList.html'
+    'views/channelDataListRow',
+    'text!templates/channelDataList.html'
 ], function ($, _, Backbone, RowView, mainTpl) {
     return Backbone.View.extend({
-        el:("#normalizzati"),
+        el:("#page"),
 
         render:function () {
             this.$el.html(mainTpl);
             _.each(this.model.models, function (rowModel) {
-                new RowView({model:rowModel}).render();
+                new RowView({model:rowModel.toJSON()}).render();
             }, this);
 
         },
 
         events:{
-            "click #vai_newsletter":"clickGeneraNewsletter"
+            "click #enrich":"enrichClicked"
         },
 
-        clickGeneraNewsletter:function () {
-            window.app_router.navigate("generaNewsletter", {trigger:true})
+        enrichClicked:function () {
+            window.app_router.navigate("enrich", {trigger:true})
         }
-
 
 
     });

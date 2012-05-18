@@ -6,7 +6,7 @@ define([
 ], function ($, _, Backbone, tplScroller) {
     return Backbone.View.extend({
         initialize:function () {
-            this.setElement($("#normalizzato_list_row_" + this.model.id + " #images"));
+            this.setElement($("#enricheddata_list_row_" + this.model.id + " #images"));
             this.model.bind("change:img", this._clickOnImg);
         },
         render:function () {

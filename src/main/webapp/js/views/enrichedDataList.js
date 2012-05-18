@@ -2,27 +2,28 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
-    'views/daCanaleListRow',
-    'text!templates/daCanaleList.html'
+    'views/enrichedDataListRow',
+    'text!templates/enrichedDataList.html'
 ], function ($, _, Backbone, RowView, mainTpl) {
     return Backbone.View.extend({
-        el:("#page"),
+        el:("#enriched"),
 
         render:function () {
             this.$el.html(mainTpl);
             _.each(this.model.models, function (rowModel) {
-                new RowView({model:rowModel.toJSON()}).render();
+                new RowView({model:rowModel}).render();
             }, this);
 
         },
 
         events:{
-            "click #vai_lavorazione":"clickLavorazione"
+            "click #create_newsletter":"clickCreateNewsletter"
         },
 
-        clickLavorazione:function () {
-            window.app_router.navigate("lavorazione", {trigger:true})
+        clickCreateNewsletter:function () {
+            window.app_router.navigate("createNewsletter", {trigger:true})
         }
+
 
 
     });
