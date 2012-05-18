@@ -11,7 +11,7 @@ define([
         render:function () {
             this.$el.html(mainTpl);
             _.each(this.model.models, function (rowModel) {
-                new RowView({model:rowModel.toJSON()}).render();
+                new RowView({model:rowModel}).render();
             }, this);
 
         },

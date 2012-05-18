@@ -1,10 +1,11 @@
-<div id="slider1">
+<div id="selected-img-<%=id%>"></div>
+<div id="img-slider-<%=id%>" class="img-slider">
     <a class="buttons prev" href="#">left</a>
     <div class="viewport">
         <ul id="img_scroller_<%=id%>" class="overview">
             <% for(var i = 0; i < imgs.length; i++){ %>
-            <% var img = imgs[i]; %>
-            <li><%=img%></li>
+            <% var imgTmp = imgs[i]; %>
+            <li><div class="img_scroller"><%=imgTmp%></div></li>
             <% }%>
         </ul>
     </div>

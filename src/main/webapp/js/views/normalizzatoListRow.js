@@ -10,7 +10,7 @@ define([
         el:("#normalizzato_list #body"),
         render:function () {
             var tpl = _.template(rowTpl);
-            this.$el.append(tpl(this.model));
+            this.$el.append(tpl(this.model.toJSON()));
             new ImgScroller({model:this.model}).render();
             //this._bindEvents();
         },

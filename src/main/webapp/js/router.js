@@ -33,7 +33,9 @@ define([
             normalizzatoList.render();
         },
         generaNewsletterAction:function(){
-            alert(newsletter.models);
+            newsletter=_.groupBy(daLavorareModule.daLavorareCollection.models, function(model){
+                return model.get("category");
+            });
         }
     }),
     initialize = function () {

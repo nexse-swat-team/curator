@@ -3,13 +3,9 @@ define([
     'Underscore',
     'Backbone'
 ], function ($, _, Backbone) {
-    var _ArticoloNewsletter = Backbone.Model.extend({
-    });
+    var newsletter = {};
 
-    return new (Backbone.Collection.extend({
-        model:_ArticoloNewsletter
-
-    }));
+    return newsletter;
 
 })
 ;
