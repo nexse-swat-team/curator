@@ -25,7 +25,7 @@ define([
                 enrichedData = new enrichedDataModule.EnrichedData({id:self.model.id});
                 enrichedData.fetch({
                     success:function(model, response){
-                        enrichedDataModule.enrichedDataCollection.add(new enrichedDataModule.EnrichedData(response));
+                        enrichedDataModule.enrichedDataCollection.add(new enrichedDataModule.EnrichedData(response.data));
                     }
                 })
             }, function () {

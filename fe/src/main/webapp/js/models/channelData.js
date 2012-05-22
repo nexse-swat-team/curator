@@ -11,7 +11,10 @@ define([
     _ChannelDataCollection = Backbone.Collection.extend({
         model:_ChannelData,
 
-        url:"api/channelData.js"
+        url:"services/rest/channeldata",
+        parse:function(response){
+            return response.data;
+        }
 
     });
 

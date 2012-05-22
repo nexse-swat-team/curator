@@ -4,8 +4,12 @@ define([
     'Backbone'
 ], function ($, _, Backbone) {
     var _EnrichedData = Backbone.Model.extend({
-//        urlRoot:"api/enriched.js"
-        url:"api/enriched.js"
+        urlRoot:"services/rest/enricheddata/",
+//        url:"api/enriched.js"
+        parse:function(response){
+            return response.data;
+        }
+
     });
 
 
