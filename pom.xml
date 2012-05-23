@@ -6,8 +6,9 @@
   <packaging>pom</packaging>
   <version>0.1</version>
     <modules>
-        <module>fe</module>
-        <module>be</module>
+        <module>web</module>
+        <module>integration</module>
+        <module>persistence</module>
     </modules>
     <name>Curator</name>
   <dependencies>

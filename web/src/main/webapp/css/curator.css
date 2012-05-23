@@ -1,0 +1,14 @@
+/* tweet styles */
+#channeldata_list { margin: 0; padding: 0; }
+#channeldata_list p { margin: 14px;}
+#channeldata_list a:hover, #channeldata_list a:active, #channeldata_list a:focus, #channeldata_list a { text-decoration: none; }
+#channeldata_list a:hover { text-decoration: underline; }
+#channeldata_list a img { border: 0; }
+#channeldata_list li { padding: 0; margin: 0; list-style: none; }
+.tweet { clear: left; min-height: 48px; padding: 9px; line-height: 1.1; position: relative; }
+#channeldata_list li.searchterm { font-size: 22px; padding: 20px 0; }
+.vcard { margin-top: 5px; float: left;}
+.hentry { margin-left: 58px; }
+.hentry .meta { font-size: 0.764em; margin: 3px 0 0; display: block; }
+#channeldata_list a { color: #00f; }
+.hentry .meta, #channeldata_list .meta a { color: #999; }

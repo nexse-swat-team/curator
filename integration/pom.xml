@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nexse.swat.curator</groupId>
-    <artifactId>be</artifactId>
+    <artifactId>integration</artifactId>
     <version>0.1</version>
 
     <dependencies>

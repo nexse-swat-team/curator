@@ -1,4 +1,4 @@
-package com.nexse.swat.web.services;
+package com.nexse.swat.curator.web.services;
 
 
 public class ChannelData {

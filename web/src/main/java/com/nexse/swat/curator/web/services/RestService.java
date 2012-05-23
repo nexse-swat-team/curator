@@ -1,4 +1,4 @@
-package com.nexse.swat.web.services;
+package com.nexse.swat.curator.web.services;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

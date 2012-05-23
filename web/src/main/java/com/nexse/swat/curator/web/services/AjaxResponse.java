@@ -1,6 +1,4 @@
-package com.nexse.swat.web.services;
-
-import java.util.List;
+package com.nexse.swat.curator.web.services;
 
 /**
  * Created with IntelliJ IDEA.
