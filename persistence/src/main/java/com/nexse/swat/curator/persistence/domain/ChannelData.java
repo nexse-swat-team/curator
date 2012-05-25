@@ -1,34 +1,15 @@
 package com.nexse.swat.curator.persistence.domain;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Configurable
 @Entity
 public class ChannelData {
-
-    @NotNull
-    @Size(min = 3)
-    private String name;
-
-    @NotNull
-    @Size(min = 3)
-    private String surname;
-
-    @Size(min = 3)
-    private String email;
-
-    @ManyToMany(cascade = {CascadeType.PERSIST} , fetch = FetchType.EAGER)
-    private Set<Project> projects = new HashSet<Project>();
     @Version
     @Column(name = "version")
     private Integer version;
@@ -36,6 +17,127 @@ public class ChannelData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+    private String text;
+    private Date createdAt;
+    private String fromUser;
+    private String profileImageUrl;
+    private Long toUserId;
+    private Long inReplyToStatusId;
+    private Long fromUserId;
+    private String languageCode;
+    private String source;
+    private Integer retweetCount;
+
+    public ChannelData(Long id, String text, Date createdAt, String fromUser, String profileImageUrl, Long toUserId, Long fromUserId, String languageCode, String source) {
+        this.id = id;
+        this.text = text;
+        this.createdAt = createdAt;
+        this.fromUser = fromUser;
+        this.profileImageUrl = profileImageUrl;
+        this.toUserId = toUserId;
+        this.fromUserId = fromUserId;
+        this.languageCode = languageCode;
+        this.source = source;
+    }
+
+    public ChannelData() {
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getFromUser() {
+        return fromUser;
+    }
+
+    public void setFromUser(String fromUser) {
+        this.fromUser = fromUser;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
+
+    public Long getToUserId() {
+        return toUserId;
+    }
+
+    public void setToUserId(Long toUserId) {
+        this.toUserId = toUserId;
+    }
+
+    public Long getFromUserId() {
+        return fromUserId;
+    }
+
+    public void setInReplyToStatusId(Long inReplyToStatusId) {
+        this.inReplyToStatusId = inReplyToStatusId;
+    }
+
+    public Long getInReplyToStatusId() {
+        return inReplyToStatusId;
+    }
+
+    public void setFromUserId(Long fromUserId) {
+        this.fromUserId = fromUserId;
+    }
+
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    public void setLanguageCode(String languageCode) {
+        this.languageCode = languageCode;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public void setRetweetCount(Integer retweetCount) {
+        this.retweetCount = retweetCount;
+    }
+
+    /**
+     * The number of times this tweet has been retweeted.
+     * Only available in timeline results.
+     * getRetweetCount() will return null for Tweet objects returned in search results.
+     */
+    public Integer getRetweetCount() {
+        return retweetCount;
+    }
+
+
+
     @PersistenceContext
     transient EntityManager entityManager;
 
@@ -46,33 +148,25 @@ public class ChannelData {
         return em;
     }
 
-    public static long countDevelopers() {
+    public static long countChannelData() {
         return entityManager().createQuery("SELECT COUNT(o) FROM ChannelData o", Long.class).getSingleResult();
     }
 
-    public static List<ChannelData> findDeveloperEntries(int firstResult, int maxResults) {
+    public static List<ChannelData> findChannelDatatEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM ChannelData o", ChannelData.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
 
-    public static ChannelData findDeveloper(Long id) {
+    public static ChannelData findChannelData(Long id) {
         if (id == null) return null;
         return entityManager().find(ChannelData.class, id);
     }
 
-    public static List<ChannelData> findAllDevelopers() {
+    public static List<ChannelData> findAllChannelData() {
         return entityManager().createQuery("SELECT o FROM ChannelData o", ChannelData.class).getResultList();
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setVersion(Integer version) {
         this.version = version;
-    }
-
-    public Long getId() {
-        return this.id;
     }
 
     public Integer getVersion() {
@@ -97,7 +191,7 @@ public class ChannelData {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            ChannelData attached = ChannelData.findDeveloper(this.id);
+            ChannelData attached = ChannelData.findChannelData(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -116,41 +210,6 @@ public class ChannelData {
         this.entityManager.clear();
     }
 
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-    }
-
-    public String getSurname() {
-        return this.surname;
-    }
-
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
-    }
-
-    public Set<Project> getProjects() {
-        return this.projects;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
 
     @Override
