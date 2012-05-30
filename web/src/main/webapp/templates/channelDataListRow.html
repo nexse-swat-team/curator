@@ -1,17 +1,3 @@
-<!--
-<div id="channeldata_list_row_<%=id%>">
-    <div><%=id%></div>
-    <div><%=title%></div>
-    <div><%=abstractTxt%></div>
-    <div><%=img%></div>
-    <div><%=link%></div>
-    <div><%=channel%></div>
-    <div id="<%=id%>_delete">delete</div>
-    <div id="<%=id%>_add">add</div>
-</div>
--->
-
-
 <div class="tweet" id="channeldata_list_row_<%=id%>">
     <!--<div><%=id%></div>-->
     <div class="vcard">
@@ -19,16 +5,15 @@
             <img style="height: 48px; width: 48px;"
                  alt="Nexse SWAT Team"
                  class="photo fn" height="48"
-                 src="http://a0.twimg.com/profile_images/1556486050/japan-flag_normal.png"
+                 src="<%=profileImageUrl%>"
                  width="48">
         </a>
     </div>
     <div class="hentry">
         <strong>
-            <a href="http://twitter.com/NexseSwatTeam" title="Nexse SWAT Team">NexseSwatTeam</a>
+            <a href="http://twitter.com/<%=fromUser%>" title="<%=fromUser%>"><%=fromUser%></a>
         </strong>
-        <span class="entry-content">InfoQ: Distributed Version Control Systems in the Enterprise
-            <a title="http://l.nexse.com/KxQitl" href="http://l.nexse.com/KxQitl">l.nexse.com/KxQitl</a>
+        <span class="entry-content"><%=text%>
         </span>
         <span class="meta entry-meta">
             <button class="btn btn-mini" id="<%=id%>_add">
@@ -39,11 +24,8 @@
                 <i class="icon-remove"></i>
                 ignore
             </button>
-            <a href="http://twitter.com/NexseSwatTeam/status/205224949126934528" class="entry-date" rel="bookmark">
-                <span class="published" title="9:13 AM May 23rd">1 hour ago</span>
-            </a>
             <span>from
-            <a href="http://bit.ly" rel="nofollow">bitly</a>
+            <%=source%>
             </span>
         </span>
     </div>

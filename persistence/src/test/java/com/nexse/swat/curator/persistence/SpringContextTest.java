@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +19,7 @@ import javax.persistence.PersistenceContext;
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/META-INF/spring/spring-context.xml")
+@ContextConfiguration(locations = "/META-INF/spring/curator/persistence-context.xml")
 public class SpringContextTest {
     @PersistenceContext
     transient EntityManager entityManager;
@@ -30,6 +31,17 @@ public class SpringContextTest {
         channelData.setSource("source");
         channelData.persist();
 
-        Assert.assertTrue(ChannelData.countChannelData() == 1l);
+        Assert.assertTrue(ChannelData.countChannelData() >= 1l);
     }
+
+    @Test
+    public void fetchingTest(){
+        ChannelData channelData = new ChannelData();
+        channelData.setFromUser("Test");
+        channelData.setSource("source");
+        channelData.persist();
+        List<ChannelData> channelDataList = ChannelData.findAllOrderedChannelData();
+        Assert.assertTrue(channelDataList.size() > 1);
+    }
+
 }

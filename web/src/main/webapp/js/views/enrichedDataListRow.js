@@ -11,7 +11,7 @@ define([
         render:function () {
             var tpl = _.template(rowTpl);
             this.$el.append(tpl(this.model.toJSON()));
-            new ImgScroller({model:this.model}).render();
+            //new ImgScroller({model:this.model}).render();
         }
     });
 });

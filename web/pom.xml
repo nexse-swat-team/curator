@@ -6,18 +6,21 @@
         <version>0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>web</artifactId>
+    <artifactId>curator-web</artifactId>
     <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-            <version>2.6.0</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
-            <version>1.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nexse.swat.curator</groupId>
+            <artifactId>curator-persistence</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
     <build>

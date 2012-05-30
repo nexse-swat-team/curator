@@ -1,5 +1,6 @@
 package com.nexse.swat.curator.persistence.domain;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,8 +18,19 @@ public class EnrichedData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
+    @JsonIgnore
     @OneToOne
     private ChannelData channelData;
+
+    private String title;
+    private String abstractTxt;
+    private String author;
+    private String link;
+    private String img;
+    @Column(columnDefinition="TEXT")
+    private String articleTxt;
+    private String imgs;
 
     @PersistenceContext
     transient EntityManager entityManager;
@@ -43,6 +55,11 @@ public class EnrichedData {
         return entityManager().find(EnrichedData.class, id);
     }
 
+    public static EnrichedData findEnrichedDataByChannelDataId(Long channelDataId) {
+        if (channelDataId == null) return null;
+        return (EnrichedData)entityManager().createQuery("select o from EnrichedData o where o.channelData.id=:channelDataId").setParameter("channelDataId", channelDataId).getSingleResult();
+    }
+
     public static List<EnrichedData> findAllEnrichedData() {
         return entityManager().createQuery("SELECT o FROM EnrichedData o", EnrichedData.class).getResultList();
     }
@@ -53,6 +70,78 @@ public class EnrichedData {
 
     public Integer getVersion() {
         return this.version;
+    }
+
+    public ChannelData getChannelData() {
+        return channelData;
+    }
+
+    public void setChannelData(ChannelData channelData) {
+        this.channelData = channelData;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAbstractTxt() {
+        return abstractTxt;
+    }
+
+    public void setAbstractTxt(String abstractTxt) {
+        this.abstractTxt = abstractTxt;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getArticleTxt() {
+        return articleTxt;
+    }
+
+    public void setArticleTxt(String articleTxt) {
+        this.articleTxt = articleTxt;
+    }
+
+    public String getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(String imgs) {
+        this.imgs = imgs;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Transactional
@@ -109,5 +198,20 @@ public class EnrichedData {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "EnrichedData{" +
+                "id=" + id +
+                ", channelData=" + channelData +
+                ", title='" + title + '\'' +
+                ", abstractTxt='" + abstractTxt + '\'' +
+                ", author='" + author + '\'' +
+                ", link='" + link + '\'' +
+                ", img='" + img + '\'' +
+                ", articleTxt='" + articleTxt + '\'' +
+                ", imgs='" + imgs + '\'' +
+                '}';
     }
 }

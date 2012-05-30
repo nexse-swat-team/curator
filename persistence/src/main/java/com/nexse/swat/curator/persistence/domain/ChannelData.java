@@ -17,6 +17,8 @@ public class ChannelData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+    @Column(unique = true)
+    private Long originalId;
     private String text;
     private Date createdAt;
     private String fromUser;
@@ -28,19 +30,15 @@ public class ChannelData {
     private String source;
     private Integer retweetCount;
 
-    public ChannelData(Long id, String text, Date createdAt, String fromUser, String profileImageUrl, Long toUserId, Long fromUserId, String languageCode, String source) {
-        this.id = id;
-        this.text = text;
-        this.createdAt = createdAt;
-        this.fromUser = fromUser;
-        this.profileImageUrl = profileImageUrl;
-        this.toUserId = toUserId;
-        this.fromUserId = fromUserId;
-        this.languageCode = languageCode;
-        this.source = source;
+    public ChannelData() {
     }
 
-    public ChannelData() {
+    public Long getOriginalId() {
+        return originalId;
+    }
+
+    public void setOriginalId(Long originalId) {
+        this.originalId = originalId;
     }
 
     public String getText() {
@@ -165,6 +163,10 @@ public class ChannelData {
         return entityManager().createQuery("SELECT o FROM ChannelData o", ChannelData.class).getResultList();
     }
 
+    public static List<ChannelData> findAllOrderedChannelData() {
+        return entityManager().createNativeQuery("select * from CHANNEL_DATA where from_user='NexseSwatTeam' union select * from CHANNEL_DATA where from_user!='NexseSwatTeam'",ChannelData.class).getResultList();
+    }
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -227,5 +229,22 @@ public class ChannelData {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "ChannelData{" +
+                "originalId=" + originalId +
+                ", text='" + text + '\'' +
+                ", createdAt=" + createdAt +
+                ", fromUser='" + fromUser + '\'' +
+                ", profileImageUrl='" + profileImageUrl + '\'' +
+                ", toUserId=" + toUserId +
+                ", inReplyToStatusId=" + inReplyToStatusId +
+                ", fromUserId=" + fromUserId +
+                ", languageCode='" + languageCode + '\'' +
+                ", source='" + source + '\'' +
+                ", retweetCount=" + retweetCount +
+                '}';
     }
 }
