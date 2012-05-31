@@ -17,7 +17,8 @@ define([
         },
 
         events:{
-            "click #enrich":"enrichClicked"
+            "click #enrich-header":"enrichClicked",
+            "click #enrich-footer":"enrichClicked"
         },
 
         enrichClicked:function () {

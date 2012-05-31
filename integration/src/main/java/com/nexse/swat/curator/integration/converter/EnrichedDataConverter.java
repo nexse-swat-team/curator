@@ -20,7 +20,7 @@ public class EnrichedDataConverter {
     public static EnrichedData toEnrichedData(ChannelData channelData){
         EnrichedData enrichedData = new EnrichedData();
         enrichedData.setChannelData(channelData);
-        enrichedData.setAbstractTxt(channelData.getText());
+        enrichedData.setTitle(channelData.getText());
         enrichedData.setAuthor(channelData.getFromUser());
         enrichedData.setImg(channelData.getProfileImageUrl());
         return enrichedData;

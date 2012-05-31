@@ -6,6 +6,10 @@ define([
     var _EnrichedData = Backbone.Model.extend({
         urlRoot:"services/rest/enricheddata/",
 //        url:"api/enriched.js"
+        defaults:{
+            "category":"Design"
+        },
+
         parse:function(response){
             return response.data;
         }

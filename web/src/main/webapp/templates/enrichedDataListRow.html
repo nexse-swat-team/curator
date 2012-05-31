@@ -1,8 +1,73 @@
 <div id="enricheddata_list_row_<%=id%>">
-    <div><%=id%><%=id%></div>
-    <div id="abstractTxt"><%=abstractTxt%></div>
-    <div id="author"><%=author%></div>
-    <div id="link"><%=link%></div>
-    <div id="img"><%=img%></div>
-    <div id="articleTxt"><%=articleTxt%></div>
+    <button id="en-<%=id%>-close" class="close">×</button>
+    <div class="well">
+        <div class="tweet">
+            <!--<div><%=id%></div>-->
+            <div class="vcard">
+                <a href="http://twitter.com/<%=channelData.fromUser%>" class="url">
+                    <img style="height: 48px; width: 48px;"
+                         alt="<%=channelData.fromUser%>"
+                         class="photo fn" height="48"
+                         src="<%=channelData.profileImageUrl%>"
+                         width="48">
+                </a>
+            </div>
+            <div class="hentry">
+                <strong>
+                    <a href="http://twitter.com/<%=channelData.fromUser%>" title="<%=channelData.fromUser%>"><%=channelData.fromUser%></a>
+                </strong>
+        <span class="entry-content"><%=channelData.text%>
+        </span>
+        <span class="meta entry-meta">
+            <span>from
+            <%=channelData.source%>
+            </span>
+        </span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="en-<%=id%>-title">Title</label>
+
+            <div class="controls">
+                <textarea class="input-xlarge" id="en-<%=id%>-title" rows="3"><%=title%></textarea>
+
+                <p class="help-block">Link: <a href="<%=link%>" target="_blank"><%=link%></a></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="en-<%=id%>-abstract">Abstract</label>
+
+            <div class="controls">
+                <textarea class="input-xlarge" id="en-<%=id%>-abstract" rows="3"></textarea>
+
+                <p class="help-block">Click <i id="en-<%=id%>-question" class="icon-question-sign"></i> for parsed text
+                </p>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="en-<%=id%>-category">Category</label>
+
+            <div class="controls">
+                <select id="en-<%=id%>-category">
+                    <option>Technology</option>
+                    <option>Programming</option>
+                    <option>Design</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="en-<%=id%>-article" class="modal hide fade" style="display: none; ">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">×</button>
+                <h3>Testo della pagina</h3>
+            </div>
+            <div class="modal-body">
+                <%=articleTxt%>
+            </div>
+            <div class="modal-footer">
+                <button id="en-<%=id%>-saveTxt" class="btn btn-primary">Save Selection</button>
+            </div>
+        </div>
+    </div>
 </div>

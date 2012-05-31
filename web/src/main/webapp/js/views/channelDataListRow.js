@@ -17,7 +17,8 @@ define([
             var id = this.model.id,
                 self = this,
                 enrichedData,
-                $elem;
+                $elem,
+                enrichedDataToAdd;
             $("#" + id + "_delete").click(function () {
                 $("#channeldata_list_row_" + id).slideUp();
             });
@@ -30,14 +31,15 @@ define([
                 enrichedData = new enrichedDataModule.EnrichedData({id:self.model.id});
                 enrichedData.fetch({
                     success:function(model, response){
-                        enrichedDataModule.enrichedDataCollection.add(new enrichedDataModule.EnrichedData(response.data));
+                        enrichedDataToAdd = new enrichedDataModule.EnrichedData(response.data);
+                        enrichedDataModule.enrichedDataCollection.add(enrichedDataToAdd);
                     }
                 })
             }, function () {
                 $elem.children("i").toggleClass("icon-remove-sign",false);
                 $elem.children("i").toggleClass("icon-ok-sign",true);
                 $elem.html($elem.html().replace("remove","add"));
-                enrichedDataModule.enrichedDataCollection.remove(new enrichedDataModule.EnrichedData(self.model));
+                enrichedDataModule.enrichedDataCollection.remove(enrichedDataToAdd);
             })
         }
     });

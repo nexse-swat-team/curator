@@ -30,7 +30,7 @@ public class JsoupBean {
     public EnrichedData enrich(EnrichedData enrichedData) throws IOException {
         log.info("Enriching {}", enrichedData.getChannelData().getText());
         log.trace("Enriching {}",enrichedData);
-        UrlParsingStrategy urlParsingStrategy = new UrlParsingStrategy(enrichedData.getAbstractTxt());
+        UrlParsingStrategy urlParsingStrategy = new UrlParsingStrategy(enrichedData.getChannelData().getText());
         String url = "";
         try {
             if (urlParsingStrategy.isParseable()) {
@@ -55,6 +55,8 @@ public class JsoupBean {
 
                 }
                 enrichedData.setArticleTxt(stringBuffer.toString());
+                enrichedData.setTitle(enrichedData.getTitle().replaceFirst(url,""));
+                enrichedData.setTitle(enrichedData.getTitle().replaceFirst("  ",""));
                 log.debug("text fetched from {} : {}",url,stringBuffer.toString());
 
             }

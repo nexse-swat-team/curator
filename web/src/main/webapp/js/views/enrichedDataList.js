@@ -16,6 +16,7 @@ define([
 
         },
 
+
         events:{
             "click #create_newsletter":"clickCreateNewsletter"
         },

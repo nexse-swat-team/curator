@@ -19,7 +19,6 @@ public class EnrichedData {
     @Column(name = "id")
     private Long id;
 
-    @JsonIgnore
     @OneToOne
     private ChannelData channelData;
 

@@ -5,10 +5,11 @@ define([
     'Backbone',
     'views/channelDataList',
     'views/enrichedDataList',
+    'views/newsletter',
     'models/channelData',
     'models/enrichedData',
     'models/newsletter'
-], function ($, _, Backbone, ChannelDataListView, EnrichedDataListView, channelDataModule, enrichedDataModule, newsletter) {
+], function ($, _, Backbone, ChannelDataListView, EnrichedDataListView, NewsletterView, channelDataModule, enrichedDataModule, newsletter) {
     var AppRouter = Backbone.Router.extend({
         routes:{
             'enrich':'enrichAction',
@@ -34,6 +35,8 @@ define([
             newsletter=_.groupBy(enrichedDataModule.enrichedDataCollection.models, function(model){
                 return model.get("category");
             });
+            new NewsletterView({model:newsletter}).render();
+
         }
     }),
     initialize = function () {
