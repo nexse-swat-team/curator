@@ -7,7 +7,7 @@ define([
         urlRoot:"services/rest/enricheddata/",
 //        url:"api/enriched.js"
         defaults:{
-            "category":"Design"
+            "category":"Technology"
         },
 
         parse:function(response){

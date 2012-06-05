@@ -8,6 +8,10 @@ define([
     return Backbone.View.extend({
         el:("#page"),
 
+        initialize:function(){
+            this.$el.empty();
+        },
+
         render:function () {
             this.$el.html(mainTpl);
             _.each(this.model.models, function (rowModel) {

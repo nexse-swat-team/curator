@@ -14,7 +14,8 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
     <import resource="classpath:META-INF/spring/curator/persistence-context.xml" />
 
-    <context:component-scan base-package="com.nexse.swat.curator" />
+    <context:annotation-config/>
+    <!--<context:component-scan base-package="com.nexse.swat.curator.web" />-->
 
     <jaxrs:server id="customerService" address="/rest">
         <jaxrs:serviceBeans>

@@ -31,8 +31,9 @@
 
             <div class="controls">
                 <textarea class="input-xlarge" id="en-<%=id%>-title" rows="3"><%=title%></textarea>
-
+                <%if(link!==null){%>
                 <p class="help-block">Link: <a href="<%=link%>" target="_blank"><%=link%></a></p>
+                <%}%>
             </div>
         </div>
         <div class="control-group">
@@ -40,8 +41,9 @@
 
             <div class="controls">
                 <textarea class="input-xlarge" id="en-<%=id%>-abstract" rows="3"></textarea>
-
+                <%if(link!==null){%>
                 <p class="help-block">Click <i id="en-<%=id%>-question" class="icon-question-sign"></i> for parsed text
+                <%}%>
                 </p>
             </div>
         </div>

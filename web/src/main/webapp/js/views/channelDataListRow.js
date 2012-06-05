@@ -7,6 +7,11 @@ define([
 ], function ($, _, Backbone, rowTpl, enrichedDataModule) {
     return Backbone.View.extend({
         el:("#channeldata_list #body"),
+
+        initialize:function(){
+            this.undelegateEvents();
+        },
+
         render:function () {
             var tpl = _.template(rowTpl);
             this.$el.append(tpl(this.model));

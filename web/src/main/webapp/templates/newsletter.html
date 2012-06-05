@@ -1,370 +1,822 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <title>Email Template - Geometric</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <style type="text/css">
-        a:hover {
-            color: #09F !important;
-            text-decoration: underline !important;
+        @media only screen and (max-device-width: 480px) {
+            table[class=outer] .cut {
+                width: 0 !important;
+                padding: 0 !important;
+            }
+
+            table[class=outer] .vcut {
+                height: 0 !important;
+                padding: 0 !important;
+            }
+
+            table[class=outer] img.cut {
+                display: none !important;
+                width: 0 !important;
+                height: 0 !important;
+            }
+
+            table[class=outer] .cut span, table[class=outer] .cut a {
+                display: none !important;
+            }
+
+            table[class=outer] .frame {
+                width: 320px !important;
+            }
+
+            table[class=outer] .main_header.media_header {
+                width: 300px !important;
+                height: 55px !important;
+            }
+
+            table[class=outer] .header_left {
+                height: 55px !important;
+            }
+
+            table[class=outer] .logo_header {
+                height: 62px !important;
+            }
+
+            table[class=outer] .media_header .main_name {
+                font-size: 12px !important;
+                line-height: 14px !important;
+            }
+
+            table[class=outer] .media_header .subtitle {
+                font-size: 12px !important;
+            }
+
+            table[class=outer] .media_main {
+                width: 300px !important;
+            }
+
+            table[class=outer] .media_main .intro {
+                width: 260px !important;
+                font-size: 14px !important;
+            }
+
+            table[class=outer] .media_main .intro2 {
+                font-size: 14px !important;
+            }
+
+            table[class=outer] .media_main .suggestions {
+                font-size: 14px !important;
+            }
+
+            table[class=outer] .media_more {
+                width: 300px !important;
+                border-radius: 0 !important;
+                background-color: #ffffff !important;
+                border-top: 1px solid #e8e8e8 !important;
+            }
+
+            table[class=outer] .media_button {
+                width: 300px !important;
+                background-color: #209ae4 !important;
+                padding-top: 3px !important;
+                padding-bottom: 3px !important;
+            }
+
+            table[class=outer] .media_footer {
+                font-size: 11px !important;
+                line-height: 14px !important;
+                padding: 0 10px !important;
+            }
+
+            table[class=outer] .address {
+                font-size: 11px !important;
+                line-height: 14px !important;
+                display: block !important;
+            }
+
+            table[class=outer] td[class=footer-padding-top] {
+                height: 20px !important;
+            }
+
+            table[class=outer] td[class=footer-padding-bottom] {
+                height: 17px !important;
+            }
+
+            table[class=outer] .media_footer br {
+                display: none !important;
+            }
+
+            table[class=outer] .reset {
+                display: block !important;
+                padding-bottom: 4px !important;
+            }
+
+            table[class=outer] .media_logo_div {
+                display: block !important;
+                position: absolute !important;
+                left: 270px !important;
+                top: 0 !important;
+                background-image: url('https://twitter.com/images/email/t1/ribbon.png') !important;
+                background-size: 100% 100% !important;
+                width: 36px !important;
+                height: 68px !important;
+            }
+
+            table[class=employee-only-padding-top-bottom] {
+                width: 310px !important;
+            }
+
+            td[class=employee-only-padding-left-right] {
+                width: 4px !important;
+            }
+
+            table[class=employee-only] {
+                width: 310px !important;
+            }
         }
 
-        a:hover#vw {
-            background-color: #CCC !important;
-            text-decoration: none !important;
-            color: #000 !important;
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            table[class=outer] .media_button {
+                padding-top: 3px !important;
+                padding-bottom: 3px !important;
+                background-color: #209ae4 !important;
+            }
+
+            table[class=outer] .media_button td.cut {
+                width: 0 !important;
+                padding: 0 !important;
+            }
+
+            table[class=outer] .media_button {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
         }
 
-        a:hover#ff {
-            background-color: #6CF !important;
-            text-decoration: none !important;
-            color: #FFF !important;
-        }
     </style>
 </head>
-<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #FFFFFF;" bgcolor="#FFFFFF"
-      leftmargin="0">
-<!--100% body table-->
-<table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#FFFFFF">
+<body style="margin: 0; padding: 0; background-color: #dddddd;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="outer" style="position: relative;">
+<tbody>
 <tr>
 <td>
-<!--email container-->
-<table cellspacing="0" border="0" align="center" cellpadding="0" width="624">
+<table class="outer frame" align="center" cellpadding="0" cellspacing="0" border="0" width="670"
+       style="border: 0px; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; background-color: #ffffff;position: relative;">
+<tbody>
+<tr>
+    <td><a href="https://twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+21+20120603"
+           style="border: none; color: #0084b4; text-decoration: none;"><span class="media_logo_div"></span></a>
+        <table cellpadding="0" cellspacing="0" border="0" width="670" class="header frame"
+               style="background-color: #f2f2f2;">
+            <tbody>
+            <tr>
+                <td class="header_left cut" style="width: 19px; height: 77px;"></td>
+                <td height="94" width="46" valign="top" rowspan="2" class="logo_header cut"
+                    style="background-color: #ffffff; line-height: 100%;"><a
+                        href="https://twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+21+20120603"
+                        style="border: none; color: #0084b4; text-decoration: none;"><img class="logo cut"
+                                                                                          src="https://twitter.com/images/email/t1/ribbon.png"
+                                                                                          width="46" height="94"
+                                                                                          style="border: 0; background-color: #fff; line-height: 100%;border: 0;"/></a>
+                </td>
+                <td class="cut" width="10"></td>
+                <td width="458" height="77" class="main_header media_header"
+                    style="padding-left: 10px; padding-right: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333;">
+                    <span class="main_name"
+                          style="font-size: 14px; line-height: 16px; font-weight: bold; color: #000000;">Nexse SWAT Team,</span><br/>
+                    <span class="subtitle" style="font-size: 14px; color: #666666; line-height: 16px;"> Here's what's happening on Twitter </span>
+                </td>
+                <td class="main_avatar cut" width="32" style="text-align: right; padding-right: 10px;"><a
+                        href="https://twitter.com/NexseSwatTeam?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+22+20120603"
+                        style="border: none; color: #0084b4; text-decoration: none;"><img class="cut"
+                                                                                          src="https://si0.twimg.com/profile_images/1556486050/japan-flag_reasonably_small.png"
+                                                                                          width="32" height="32"
+                                                                                          alt="Nexse SWAT Team"
+                                                                                          style="border-radius: 4px;background-color: #ffffff;border: 0;"/></a>
+                </td>
+                <td class="col header cut" style="width: 75px;background-color: #f2f2f2;"></td>
+            </tr>
+            <tr>
+                <td class="main header_drop cut" style="border-top: 1px solid #dddddd;background-color: #ffffff;"></td>
+                <td class="main header_drop cut" style="border-top: 1px solid #dddddd;background-color: #ffffff;"></td>
+                <td class="main header_drop media_header" height="17"
+                    style="border-top: 1px solid #dddddd;background-color: #ffffff;"><img width="1" height="1"
+                                                                                          style="display: block;border: 0;"
+                                                                                          src="https://twitter.com/scribe/ibis?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+20+20120603"/>
+                </td>
+                <td class="main header_drop cut" height="17" colspan="2"
+                    style="border-top: 1px solid #dddddd;background-color: #ffffff;"></td>
+            </tr>
+            </tbody>
+        </table>
+    </td>
+    <td rowspan="3"></td>
+</tr>
 <tr>
 <td>
-<!--header-->
-<table cellspacing="0" border="0" cellpadding="0" width="624">
-    <tr>
-        <td valign="top"><img src="images/spacer-top.jpg" height="12" width="624"/>
-            <!--top links-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td valign="middle" width="221">
-                        <p style="font-size: 12px; font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0px;">
-                            Is this email not displaying correctly?</p>
-                    </td>
-                    <td valign="top" width="285">
-                        <p style="font-size: 12px; font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0px;">
-                            <webversion id="vw"
-                                        style="float: left; padding: 5px; -webkit-border-radius: 3px; font-weight: bold; text-decoration: none; color: #333; -khtml-border-radius: 3px; background: #e9e8e8; -moz-border-radius: 3px; border-radius: 3px;">
-                                View it in a web browser
-                            </webversion>
-                        </p>
-                    </td>
-                    <td valign="top" width="118">
-                        <p style="font-size: 12px; font-family: Helvetica, Arial, sans-serif; color: #333; margin: 0px;">
-                            <forwardtoafriend id="ff"
-                                              style="float: left; padding: 5px; -webkit-border-radius: 3px; font-weight: bold; text-decoration: none; color: #FFF; -khtml-border-radius: 3px; background: #4b98d7; -moz-border-radius: 3px; border-radius: 3px;">
-                                Forward to a friend
-                            </forwardtoafriend>
-                        </p>
-                    </td>
-                </tr>
-            </table>
-            <!--/top links-->
-            <!--line break-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td valign="top" width="624">
-                        <p><img src="images/line-break.jpg" height="10" width="624"/></p>
-                    </td>
-                </tr>
-            </table>
-            <!--/line break-->
-            <!--header content-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td>
-                        <h1 style="color: #333; margin: 0px; font-weight: normal; font-size: 60px; font-family: Helvetica, Arial, sans-serif;">
-                            ABC Newsletter</h1>
+<style type="text/css">
+    @media only screen and (max-device-width: 480px) {
+        table[class="main"] {
+            width: 320px !important;
+        }
 
-                        <h2 style="color: #333; margin: 0px; font-weight: normal; font-size: 30px; font-family: Helvetica, Arial, sans-serif;">
-                            //
-                            <currentmonthname>
-                                <currentyear>
-                        </h2>
-                    </td>
-                    <td id="issue" valign="top"
-                        style="background-image: url('images/issue-no.jpg'); background-color: #4b98d7; background-repeat: no-repeat; background-position: top; width: 109px; height: 109px;"
-                        bgcolor="#4b98d7">
-                        <!--number-->
-                        <table width="104" align="right" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td width="52" height="73" valign="bottom"><img align="right" src="images/no.jpg"
-                                                                                width="43" height="35"></td>
-                                <td width="52" valign="bottom">
-                                    <h3 style="margin: 0px; padding:0; font-size: 32px; font-family: Helvetica, Arial, sans-serif; color: #FFF;">
-                                        12</h3>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--/number-->
-                    </td>
-                </tr>
-            </table>
-            <!--/header content-->
+        table[class="story-padding padding"] {
+            width: 320px !important;
+        }
+
+        table[class="story-padding padding"] td {
+            height: 15px !important;
+        }
+
+        table[class="story"] {
+            width: 300px !important;
+        }
+
+        hr[class="story-separator"] {
+            width: 320px !important;
+        }
+
+        hr[class="tweet-separator"] {
+            width: 320px !important;
+        }
+
+        hr[class="separator"] {
+            width: 320px !important;
+        }
+
+        td[class="snippet-padding padding"] {
+            height: 7px !important;
+        }
+
+        td[class="image-padding padding"] {
+            width: 15px !important;
+        }
+
+        tr[class="title-ribbon-padding padding"] {
+            height: 1px !important;
+        }
+
+        tr[class="title-padding padding"] {
+            height: 10px !important;
+        }
+
+        img[class="story-image"] {
+            max-width: 90px !important;
+        }
+
+        td[id="story-image-wrapper-1"] {
+            width: 90px !important;
+        }
+
+        table[class="heading"] {
+            width: 300px !important;
+            font-size: 14px !important;
+            line-height: 14px !important;
+        }
+
+        table[class="tweet"] {
+            width: 300px !important;
+        }
+
+        table[class="tweet-padding padding"] {
+            width: 320px !important;
+        }
+
+        a[class="story-title"] span {
+            font-size: 14px !important;
+            line-height: 18px !important;
+        }
+
+        span[class="story-snippet"] {
+            font-size: 12px !important;
+            line-height: 16px !important;
+        }
+
+        table[class="action"] {
+            width: 300px !important;
+            border-radius: 0 !important;
+            background-color: #ffffff !important;
+            border-top: 1px solid #e8e8e8 !important;
+        }
+
+        table[class="action-wrapper"] {
+            width: 320px !important;
+        }
+
+        table[class="action-padding padding"] {
+            display: none !important;
+        }
+    }
+
+</style>
+
+<table width="670" border="0" cellpadding="0" cellspacing="0" class="main frame" style="background-color: #ffffff;">
+<tbody>
+<%for(category in data){%>
+<tr>
+<td>
+<!--
+<hr width="520" height="2" class="separator"
+    style="border: 0; margin: 0 auto; color: #ddd; background-color: #ddd; height: 2px;"/>
+-->
+
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="heading"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; line-height: 18px; font-weight: bold; color: #333;">
+    <tbody>
+    <tr height="14" class="title-padding padding" style="background-color: white;"></tr>
+    <tr>
+        <td> <%=category%></td>
+    </tr>
+    <tr height="14" class="title-padding padding" style="background-color: white;"></tr>
+    </tbody>
+</table>
+<%for(categoryArt in data[category]){%>
+<hr width="520" height="1" class="tweet-separator"
+    style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; table-layout: fixed; overflow: hidden;">
+    <tbody>
+    <tr valign="top">
+        <td rowspan="8" width="48" class="tweet-avatar"><a
+                href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+123+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"> <img width="48" height="48"
+                                                                                   src="https://si0.twimg.com/profile_images/1779551456/peterseibel.original-1326849488_reasonably_small.jpg"
+                                                                                   style="border: 0;width: 48px; height: 48px; border-radius: 4px;"/>
+        </a></td>
+        <td rowspan="8" width="10" class="tweet-avatar-padding padding" style="background-color: white;"></td>
+        <td>
+            <a href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+133+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">Peter Seibel</span></a>
+            <a href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+143+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                  style="font-size: 12px; color: #999;">@peterseibel</span></a>
+        </td>
+        <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><a
+                href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+30+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span
+                style="color: #bbb;">29 May</span></a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-text" style="font-size: 14px; line-height: 18px; color: #333;"> My favorite
+            Mythical Man Month story: a team in which each developer bought the manager a copy of MMM. So he could read
+            it faster.
         </td>
     </tr>
-</table>
-<!--/header-->
-<!--line break-->
-<table cellspacing="0" border="0" cellpadding="0" width="624">
-    <tr>
-        <td height="50" valign="middle" width="624"><img src="images/line-break-2.jpg" height="13" width="624"/></td>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
     </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;"> Retweeted by <a
+                href="https://twitter.com/jchris?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+50+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">J Chris Anderson</a>, <a
+                href="https://twitter.com/mittie?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+51+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Dierk König</a> and 100+ others
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><a
+                href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+40+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-details"
+                                                                                   style="font-size: 12px;">View details</span></a>
+        </td>
+    </tr>
+    </tbody>
 </table>
-<!--/line break-->
-<!--email content-->
-<table cellspacing="0" border="0" id="email-content" cellpadding="0" width="624">
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<%}%>
+<!--<hr width="520" height="1" class="tweet-separator"
+    style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; table-layout: fixed; overflow: hidden;">
+    <tbody>
+    <tr valign="top">
+        <td rowspan="8" width="48" class="tweet-avatar"><a
+                href="https://twitter.com/NexseSwatTeam/status/207113749927170049?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+124+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"> <img width="48" height="48"
+                                                                                   src="https://si0.twimg.com/profile_images/1556486050/japan-flag_reasonably_small.png"
+                                                                                   style="border: 0;width: 48px; height: 48px; border-radius: 4px;"/>
+        </a></td>
+        <td rowspan="8" width="10" class="tweet-avatar-padding padding" style="background-color: white;"></td>
+        <td>
+            <a href="https://twitter.com/NexseSwatTeam/status/207113749927170049?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+134+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">Nexse SWAT Team</span></a>
+            <a href="https://twitter.com/NexseSwatTeam/status/207113749927170049?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+144+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                  style="font-size: 12px; color: #999;">@NexseSwatTeam</span></a>
+        </td>
+        <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><a
+                href="https://twitter.com/NexseSwatTeam/status/207113749927170049?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+31+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span
+                style="color: #bbb;">28 May</span></a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-text" style="font-size: 14px; line-height: 18px; color: #333;"> Maven,
+            un'introduzione - video a cura del Nexse SWAT Team <a
+                    href="http://t.co/UbX38Edm?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+292+20120603"
+                    style="border: none; color: #0084b4; text-decoration: none;color: #777;">l.nexse.com/Ky5FVN</a></td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;"> Retweeted by <a
+                href="https://twitter.com/mirkocaserta?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+53+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Mirko Caserta</a>, <a
+                href="https://twitter.com/danilodelfio?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+54+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Danilo Del Fio</a> and 3 others
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><a
+                href="https://twitter.com/NexseSwatTeam/status/207113749927170049?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+41+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-details"
+                                                                                   style="font-size: 12px;">View details</span></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<hr width="520" height="1" class="tweet-separator"
+    style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; table-layout: fixed; overflow: hidden;">
+    <tbody>
+    <tr valign="top">
+        <td rowspan="8" width="48" class="tweet-avatar"><a
+                href="https://twitter.com/robdelaney/status/208363343138922497?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+125+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"> <img width="48" height="48"
+                                                                                   src="https://si0.twimg.com/profile_images/1643163355/Screen_shot_2011-11-16_at_9.08.14_PM_reasonably_small.png"
+                                                                                   style="border: 0;width: 48px; height: 48px; border-radius: 4px;"/>
+        </a></td>
+        <td rowspan="8" width="10" class="tweet-avatar-padding padding" style="background-color: white;"></td>
+        <td>
+            <a href="https://twitter.com/robdelaney/status/208363343138922497?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+135+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">rob delaney</span></a>
+            <a href="https://twitter.com/robdelaney/status/208363343138922497?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+145+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                  style="font-size: 12px; color: #999;">@robdelaney</span></a>
+        </td>
+        <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><a
+                href="https://twitter.com/robdelaney/status/208363343138922497?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+32+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span
+                style="color: #bbb;">01 Jun</span></a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-text" style="font-size: 14px; line-height: 18px; color: #333;"> Rough day. My
+            cousin Tony was diagnosed with whatever the fuck it is that makes you wear those 5-toed rubber shoes.
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;"> Retweeted by <a
+                href="https://twitter.com/evanchooly?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+56+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Justin Lee</a>, <a
+                href="https://twitter.com/skamille?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+57+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Camille Fournier</a> and 100+
+            others
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><a
+                href="https://twitter.com/robdelaney/status/208363343138922497?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+42+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-details"
+                                                                                   style="font-size: 12px;">View details</span></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<hr width="520" height="1" class="tweet-separator"
+    style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; table-layout: fixed; overflow: hidden;">
+    <tbody>
+    <tr valign="top">
+        <td rowspan="8" width="48" class="tweet-avatar"><a
+                href="https://twitter.com/NolanBushnell/status/98789741268447232?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+126+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"> <img width="48" height="48"
+                                                                                   src="https://si0.twimg.com/profile_images/1376691140/NKB_wired_reasonably_small.jpg"
+                                                                                   style="border: 0;width: 48px; height: 48px; border-radius: 4px;"/>
+        </a></td>
+        <td rowspan="8" width="10" class="tweet-avatar-padding padding" style="background-color: white;"></td>
+        <td>
+            <a href="https://twitter.com/NolanBushnell/status/98789741268447232?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+136+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">Nolan K Bushnell</span></a>
+            <a href="https://twitter.com/NolanBushnell/status/98789741268447232?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+146+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                  style="font-size: 12px; color: #999;">@NolanBushnell</span></a>
+        </td>
+        <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><a
+                href="https://twitter.com/NolanBushnell/status/98789741268447232?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+33+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span
+                style="color: #bbb;">03 Aug</span></a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-text" style="font-size: 14px; line-height: 18px; color: #333;"> At Atari we hired
+            based on hobbies and not grades in school. We ended up with he best engineering group in the world.
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;"> Retweeted by <a
+                href="https://twitter.com/antirez?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+59+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Salvatore Sanfilippo</a>, <a
+                href="https://twitter.com/dakami?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+60+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Dan Kaminsky</a> and 100+
+            others
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><a
+                href="https://twitter.com/NolanBushnell/status/98789741268447232?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+43+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-details"
+                                                                                   style="font-size: 12px;">View details</span></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<hr width="520" height="1" class="tweet-separator"
+    style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet"
+       style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; table-layout: fixed; overflow: hidden;">
+    <tbody>
+    <tr valign="top">
+        <td rowspan="8" width="48" class="tweet-avatar"><a
+                href="https://twitter.com/mirkocaserta/status/207037461136818177?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+127+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"> <img width="48" height="48"
+                                                                                   src="https://si0.twimg.com/profile_images/1644967275/mirko-rayban_reasonably_small.jpg"
+                                                                                   style="border: 0;width: 48px; height: 48px; border-radius: 4px;"/>
+        </a></td>
+        <td rowspan="8" width="10" class="tweet-avatar-padding padding" style="background-color: white;"></td>
+        <td>
+            <a href="https://twitter.com/mirkocaserta/status/207037461136818177?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+137+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">Mirko Caserta</span></a>
+            <a href="https://twitter.com/mirkocaserta/status/207037461136818177?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+147+20120603"
+               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                  style="font-size: 12px; color: #999;">@mirkocaserta</span></a>
+        </td>
+        <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><a
+                href="https://twitter.com/mirkocaserta/status/207037461136818177?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+34+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span
+                style="color: #bbb;">28 May</span></a></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-text" style="font-size: 14px; line-height: 18px; color: #333;"> Oggi Zuckerberg è a
+            Roma. Embè? Io ci sto da più di dieci anni. Béccate questa Zuckerberg.
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;"> Retweeted by <a
+                href="https://twitter.com/foogaro?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+62+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">{Luigi Fugaro}</a>, <a
+                href="https://twitter.com/eurotrip?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+63+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;color: #999;">Giuseppe T.</a> and 5 others
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
+    </tr>
+    <tr valign="top">
+        <td colspan="2"><a
+                href="https://twitter.com/mirkocaserta/status/207037461136818177?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+44+20120603"
+                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-details"
+                                                                                   style="font-size: 12px;">View details</span></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table width="500" border="0" align="center" cellpadding="0" cellspacing="0" class="tweet-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="500" height="12"></td>
+    </tr>
+    </tbody>
+</table>-->
+<!--
+<table width="670" border="0" align="center" cellpadding="0" cellspacing="0" class="action-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="670" height="18"></td>
+    </tr>
+    </tbody>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" width="670" class="action-wrapper" style="background-color: white;">
+    <tbody>
     <tr>
         <td>
-            <!--section 1-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
+            <table cellpadding="0" cellspacing="0" width="520" align="center" class="action"
+                   style="border-radius: 5px; background-color: #ededed; padding: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333;">
+                <tbody>
                 <tr>
-                    <td>
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                            <img src="images/img1.jpg" height="286" alt="image dsc"
-                                 style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;"
-                                 width="622"/></p>
-
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                            <img src="images/spacer-ten.jpg" height="10" width="624"/></p>
-
-                        <h2 style="font-size: 36px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                            Lorem ipsum dolor sit amet</h2>
-
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                            Consectetur adipiscing elit. <a href="#" style="color: #4b98d7; text-decoration: none;">Phasellus</a>
-                            a ipsum a risus volutpat placerat in nec mauris. Fusce sit amet enim erat, in sagittis arcu.
-                            <a href="#" style="color: #4b98d7; text-decoration: none;">Aliquam dolor dolor</a>, semper
-                            id tempor et, varius pulvinar tellus. Maurtis commodo urna at dui bibendum quis euismod
-                            velit egestas. Vestibulum ante ipsum primis in faucibus orci luctus et.</p>
-                    </td>
-                </tr>
-            </table>
-            <!--/section 1-->
-            <!--line break-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td height="30" valign="middle" width="624"><img src="images/line-break-2.jpg" height="13"
-                                                                     width="624"/></td>
-                </tr>
-            </table>
-            <!--/line break-->
-            <!--section 2-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td>
-                        <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                            Featured Items</h3>
-                        <img src="images/line-break.jpg" height="10" width="624"/>
-                        <table cellspacing="0" border="0" cellpadding="8" width="100%" style="margin-top: 10px;">
+                    <td class="cut"><span class="action_tip"
+                                          style="font-size: 14px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; text-shadow: 0 1px 0 #fff;"><strong>Don't
+                        miss out.</strong> Stay up to date on what's happening.</span></td>
+                    <td align="right"><a class="button_link"
+                                         href="https://twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+21+20120603"
+                                         style="border: none; color: #0084b4; text-decoration: none;border: none;">
+                        <table border="0" cellpadding="0" cellspacing="0"
+                               background="https://twitter.com/images/email/t1/button_bg.png"
+                               class="button media_button"
+                               style="background-color: #33a9e5; border-radius: 5px; border: 1px solid #2288cc; padding: 5px 16px 5px 16px; text-align: center; height: 28px;">
+                            <tbody>
                             <tr>
-                                <td valign="top">
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        <img src="images/img2.jpg" height="108" alt="img2"
-                                             style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;"
-                                             width="138"/></p>
-                                    <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">
-                                        Lorem ipsum dolor sit amet</h4>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. Phasellus a ipsum a risus volutpat placerat in nec
-                                        mauris. Fusce sit</p>
-                                </td>
-                                <td valign="top">
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        <img src="images/img3.jpg" height="108" alt="img3"
-                                             style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;"
-                                             width="138"/></p>
-                                    <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">
-                                        Lorem ipsum dolor sit amet</h4>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. Phasellus a ipsum a risus volutpat placerat in nec
-                                        mauris. Fusce sit</p>
-                                </td>
-                                <td valign="top">
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        <img src="images/img4.jpg" height="108" alt="img4"
-                                             style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;"
-                                             width="138"/></p>
-                                    <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">
-                                        Lorem ipsum dolor sit amet</h4>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. Phasellus a ipsum a risus volutpat placerat in nec
-                                        mauris. Fusce sit</p>
-                                </td>
-                                <td valign="top">
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        <img src="images/img5.jpg" height="108" alt="img5"
-                                             style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333;"
-                                             width="138"/></p>
-                                    <h4 style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 12px 0px;">
-                                        Lorem ipsum dolor sit amet</h4>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. Phasellus a ipsum a risus volutpat placerat in nec
-                                        mauris. Fusce sit</p>
+                                <td style="color: #ffffff; font-size: 13px; font-weight: bold; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                                    Go to Twitter
                                 </td>
                             </tr>
+                            </tbody>
                         </table>
-                    </td>
+                    </a></td>
                 </tr>
+                </tbody>
             </table>
-            <!--/section 2-->
-            <!--line break-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td height="30" valign="middle" width="624"><img src="images/line-break-2.jpg" height="13"
-                                                                     width="624"/></td>
-                </tr>
-            </table>
-            <!--/line break-->
-            <!--section 3-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td>
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;"></p>
-
-                        <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                            Latest News Articles</h3>
-                        <!--line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td height="35" valign="top"><img src="images/line-break.jpg" height="10" width="624"/>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--/line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td valign="top" width="378">
-                                    <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                                        Lorem ipsum dolor sit amet</h3>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. <a href="#"
-                                                                        style="color: #4b98d7; text-decoration: none;">Phasellus</a>
-                                        a ipsum a risus volutpat placerat in nec mauris. Fusce sit amet enim erat, in
-                                        sagittis arcu. <a href="#" style="color: #4b98d7; text-decoration: none;">Aliquam
-                                        dolor dolor</a>, semper id tempor et, varius pulvinar tellus. Maurtis commodo
-                                        urna at dui bibendum quis euismod velit egestas. Vestibulum ante ipsum primis in
-                                        faucibus orci luctus et ultrices posuere <a href="#"
-                                                                                    style="color: #4b98d7; text-decoration: none;">Read
-                                        more ›</a></p>
-                                </td>
-                                <td valign="top" width="246"><img src="images/img6.jpg" align="right" height="239"
-                                                                  alt="img6"
-                                                                  style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333; float: right;"
-                                                                  width="217"/></td>
-                            </tr>
-                        </table>
-                        <!--line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td height="40" valign="middle"><img src="images/line-break.jpg" height="10"
-                                                                     width="624"/></td>
-                            </tr>
-                        </table>
-                        <!--/line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td valign="top" width="378">
-                                    <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                                        Lorem ipsum dolor sit amet</h3>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. <a href="#"
-                                                                        style="color: #4b98d7; text-decoration: none;">Phasellus</a>
-                                        a ipsum a risus volutpat placerat in nec mauris. Fusce sit amet enim erat, in
-                                        sagittis arcu. <a href="#" style="color: #4b98d7; text-decoration: none;">Aliquam
-                                        dolor dolor</a>, semper id tempor et, varius pulvinar tellus. Maurtis commodo
-                                        urna at dui bibendum quis euismod velit egestas. Vestibulum ante ipsum primis in
-                                        faucibus orci luctus et ultrices posuere <a href="#"
-                                                                                    style="color: #4b98d7; text-decoration: none;">Read
-                                        more ›</a></p>
-                                </td>
-                                <td valign="top" width="246"><img src="images/img7.jpg" align="right" height="239"
-                                                                  alt="img7"
-                                                                  style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333; float: right;"
-                                                                  width="217"/></td>
-                            </tr>
-                        </table>
-                        <!--line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td height="40" valign="middle"><img src="images/line-break.jpg" height="10"
-                                                                     width="624"/></td>
-                            </tr>
-                        </table>
-                        <!--/line break-->
-                        <table cellspacing="0" border="0" cellpadding="0" width="624">
-                            <tr>
-                                <td valign="top" width="378">
-                                    <h3 style="font-size: 24px; font-family: Helvetica, Arial, sans-serif; color: #333 !important; margin: 0px;">
-                                        Lorem ipsum dolor sit amet</h3>
-
-                                    <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                                        Consectetur adipiscing elit. <a href="#"
-                                                                        style="color: #4b98d7; text-decoration: none;">Phasellus</a>
-                                        a ipsum a risus volutpat placerat in nec mauris. Fusce sit amet enim erat, in
-                                        sagittis arcu. <a href="#" style="color: #4b98d7; text-decoration: none;">Aliquam
-                                        dolor dolor</a>, semper id tempor et, varius pulvinar tellus. Maurtis commodo
-                                        urna at dui bibendum quis euismod velit egestas. Vestibulum ante ipsum primis in
-                                        faucibus orci luctus et ultrices posuere <a href="#"
-                                                                                    style="color: #4b98d7; text-decoration: none;">Read
-                                        more ›</a></p>
-                                </td>
-                                <td valign="top" width="246"><img src="images/img8.jpg" align="right" height="239"
-                                                                  alt="img8"
-                                                                  style="border: solid 1px #FFF; box-shadow: 2px 2px 6px #333; -webkit-box-shadow: 2px 2px 6px #333; -khtml-box-shadow: 2px 2px 6px #333; -moz-box-shadow: 2px 2px 6px #333; float: right;"
-                                                                  width="217"/></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-            <!--/section 3-->
-            <!--line break-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td height="30" valign="middle" width="624"><img src="images/line-break-2.jpg" height="13"
-                                                                     width="624"/></td>
-                </tr>
-            </table>
-            <!--/line break-->
-            <!--footer-->
-            <table cellspacing="0" border="0" cellpadding="0" width="624">
-                <tr>
-                    <td>
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                            You’re receiving this newsletter because you’ve subscribed to our Newsletter.
-                            Not interested anymore?
-                            <unsubscribe style="color: #4b98d7; text-decoration: none;">Unsubscribe instantly.
-                            </unsubscribe>
-                            <br/>
-                            <br/>
-                            Copyright &copy; 2010 ABC Industries.
-                        </p>
-                        <p style="font-size: 17px; line-height: 24px; font-family: Georgia, 'Times New Roman', Times, serif; color: #333; margin: 0px;">
-                            <img src="images/spacer-ten.jpg" height="10" width="624"/></p>
-                    </td>
-                </tr>
-            </table>
-            <!--/footer-->
         </td>
     </tr>
+    </tbody>
 </table>
-<!--/email content-->
+<table width="670" border="0" align="center" cellpadding="0" cellspacing="0" class="action-padding padding"
+       style="background-color: white;">
+    <tbody>
+    <tr>
+        <td width="670" height="30"></td>
+    </tr>
+    </tbody>
+</table>
+-->
 </td>
 </tr>
+<%}%>
+<tr>
+    <td>
+        <table border="0" cellpadding="0" cellspacing="0" width="670" class="frame footer"
+               style="background-color: #eeeeee;">
+            <tbody>
+            <tr>
+                <td colspan="3" height="28" class="footer-padding-top" style="border-top: 1px solid #dddddd;"></td>
+            </tr>
+            <tr>
+                <td class="col cut" style="width: 75px;"></td>
+                <td class="footer_body media_footer"
+                    style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #777; text-shadow: 0 1px 0 #ffffff;">
+                    <div>
+                        Forgot your Twitter password?
+                        <a class="reset"
+                           href="https://twitter.com/account/resend_password?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+24+20120603"
+                           style="border: none; color: #0084b4; text-decoration: none;">Get instructions on how to reset
+                            it.</a>
+                    </div>
+                    <div>
+                        You can also
+                        <a href="https://twitter.com/i/u?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+26+20120603&sig=c0ba0139d0627696cc5f2f78a282cb76286c8ad4"
+                           style="border: none; color: #0084b4; text-decoration: none;">unsubscribe to these emails</a>.
+                        Need
+                        <a href="https://support.twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+97+20120603"
+                           style="border: none; color: #0084b4; text-decoration: none;">help</a>?
+                    </div>
+                    <div>
+                        <a href="#" class="address"
+                           style="border: none; color: #0084b4; text-decoration: none;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; font-size: 11px; line-height: 17px; color: #999999; text-shadow: 0 1px 0 #ffffff;">Twitter,
+                            Inc. 795 Folsom St., Suite 600 <span class="nobreak" style="white-space: nowrap;">San Francisco, CA 94107</span></a>
+                    </div>
+                </td>
+                <td class="col cut" style="width: 75px;"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="footer-padding-bottom" height="25"></td>
+            </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+</tbody>
 </table>
-<!--/email container-->
 </td>
 </tr>
+</tbody>
 </table>
-<!--/100% body table-->
+</td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>
