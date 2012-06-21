@@ -24,7 +24,7 @@ public class JsoupTest {
     @Test
     public void textParsingTXT() throws IOException {
         //String url = "http://java.html.it/articoli/leggi/4009/jsoup-parsing-semplice-di-html5-in-java/";
-        String url = "http://bit.ly/KODOQc";
+        String url = "http://google.com";
 
         Document doc = Jsoup.connect(url).get();
 

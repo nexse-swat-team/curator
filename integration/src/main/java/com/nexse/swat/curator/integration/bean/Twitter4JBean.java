@@ -24,7 +24,7 @@ public class Twitter4JBean {
                 .setOAuthAccessTokenSecret("LXCQyLd9pBWf6pTbuHisz9mZLJ4qWjlNfNKtJYHkkkE");
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
-        Paging paging = new Paging(1,400);
+        Paging paging = new Paging(1,100);
         List<Status> statuses = twitter.getUserTimeline(paging);
 
         return statuses;
