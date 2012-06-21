@@ -4,12 +4,15 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 @Configurable
 @Entity
 public class ChannelData {
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+
     @Version
     @Column(name = "version")
     private Integer version;
@@ -21,7 +24,9 @@ public class ChannelData {
     private Long originalId;
     private String text;
     private Date createdAt;
+    private String time;
     private String fromUser;
+    private String fromUserScreenName;
     private String profileImageUrl;
     private Long toUserId;
     private Long inReplyToStatusId;
@@ -135,6 +140,21 @@ public class ChannelData {
     }
 
 
+    public String getTime() {
+        return getCreatedAt()!=null?simpleDateFormat.format(getCreatedAt()):null;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getFromUserScreenName() {
+        return fromUserScreenName;
+    }
+
+    public void setFromUserScreenName(String fromUserScreenName) {
+        this.fromUserScreenName = fromUserScreenName;
+    }
 
     @PersistenceContext
     transient EntityManager entityManager;
@@ -160,11 +180,11 @@ public class ChannelData {
     }
 
     public static List<ChannelData> findAllChannelData() {
-        return entityManager().createQuery("SELECT o FROM ChannelData o", ChannelData.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM ChannelData o order by o.createdAt desc", ChannelData.class).getResultList();
     }
 
     public static List<ChannelData> findAllOrderedChannelData() {
-        return entityManager().createNativeQuery("select * from CHANNEL_DATA where from_user='NexseSwatTeam' union select * from CHANNEL_DATA where from_user!='NexseSwatTeam'",ChannelData.class).getResultList();
+        return entityManager().createNativeQuery("select * from CHANNEL_DATA",ChannelData.class).getResultList();
     }
 
     public void setVersion(Integer version) {

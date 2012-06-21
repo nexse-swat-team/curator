@@ -38,7 +38,7 @@
     <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
         <camel:route>
             <camel:from uri="direct:process"/>
-            <camel:bean ref="twitterBean"/>
+            <camel:bean ref="twitter4JBean"/>
             <camel:split parallelProcessing="true">
                 <simple>${body}</simple>
                 <camel:bean ref="persisterBean"/>

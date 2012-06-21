@@ -40,7 +40,7 @@ public class SpringContextTest {
         channelData.setFromUser("Test");
         channelData.setSource("source");
         channelData.persist();
-        List<ChannelData> channelDataList = ChannelData.findAllOrderedChannelData();
+        List<ChannelData> channelDataList = ChannelData.findAllChannelData();
         Assert.assertTrue(channelDataList.size() > 1);
     }
 

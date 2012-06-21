@@ -14,7 +14,7 @@ public class RestService {
     @Path("/channeldata/")
     public AjaxResponse<List<ChannelData>> getChannelData() {
         System.out.println("----invoking getChannelData");
-        List<ChannelData> channelDataList = ChannelData.findAllOrderedChannelData();
+        List<ChannelData> channelDataList = ChannelData.findAllChannelData();
         return new AjaxResponse<List<ChannelData>>("true",channelDataList);
     }
 
