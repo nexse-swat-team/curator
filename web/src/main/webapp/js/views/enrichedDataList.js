@@ -5,8 +5,9 @@ define([
     'views/enrichedDataListRow',
     'text!templates/enrichedDataList.html',
     'models/enrichedData',
-    'views/newsletter'
-], function ($, _, Backbone, RowView, mainTpl, enrichedDataModule, NewsletterView) {
+    'views/newsletter',
+    'models/newsletter'
+], function ($, _, Backbone, RowView, mainTpl, enrichedDataModule, NewsletterView, newsletter) {
     return Backbone.View.extend({
         el:("#page"),
 
@@ -24,7 +25,8 @@ define([
 
 
         events:{
-            "click #create_newsletter":"clickCreateNewsletter"
+            "click #create_newsletter":"clickCreateNewsletter",
+            "click #send_newsletter":"clickSendNewsletter"
         },
 
         clickCreateNewsletter:function (e) {
@@ -33,6 +35,15 @@ define([
                 return model.get("category");
             });
             new NewsletterView({model:newsletter}).render();
+        },
+        clickSendNewsletter:function (e) {
+            $.ajax({
+                url: "services/rest/newsletter/",
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({body:newsletter.data,token:newsletter.token}),
+                dataType: 'json'
+            })
         }
 
     });

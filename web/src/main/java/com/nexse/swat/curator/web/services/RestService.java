@@ -2,7 +2,7 @@ package com.nexse.swat.curator.web.services;
 
 import com.nexse.swat.curator.persistence.domain.ChannelData;
 import com.nexse.swat.curator.persistence.domain.EnrichedData;
-import com.nexse.swat.curator.persistence.domain.Newsletter;
+import com.nexse.swat.curator.persistence.domain.NewsletterData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,18 +28,18 @@ public class RestService {
     }
 
     @GET
-    @Path("/newsletter/")
-    public AjaxResponse<List<Newsletter>> getNewsletter() {
-        List<Newsletter> newsletters = Newsletter.findAllNewsletter();
-        return new AjaxResponse<List<Newsletter>>("true",newsletters);
+    @Path("/newsletterData/")
+    public AjaxResponse<List<NewsletterData>> getNewsletter() {
+        List<NewsletterData> newsletterDatas = NewsletterData.findAllNewsletter();
+        return new AjaxResponse<List<NewsletterData>>("true", newsletterDatas);
     }
 
 
     @PUT
     @Path("/newsletter/")
-    public AjaxResponse<Long> sendNewsletter(Newsletter newsletter) {
-        newsletter.persist();
-        return new AjaxResponse<Long>("true",newsletter.getId());
+    public AjaxResponse<Long> sendNewsletter(NewsletterData newsletterData) {
+        newsletterData.persist();
+        return new AjaxResponse<Long>("true", newsletterData.getId());
     }
 
 }

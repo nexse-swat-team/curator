@@ -1,15 +1,13 @@
 package com.nexse.swat.curator.persistence;
 
 import com.nexse.swat.curator.persistence.domain.ChannelData;
-import com.nexse.swat.curator.persistence.domain.Newsletter;
+import com.nexse.swat.curator.persistence.domain.NewsletterData;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -52,11 +50,11 @@ public class SpringContextTest {
 
     @Test
     public void newsletterFetchingTest(){
-        Newsletter newsletter = new Newsletter();
-        newsletter.setCreatedAt(new Date());
-        newsletter.persist();
-        newsletter.flush();
-        List<Newsletter> newsletterList = Newsletter.findAllNewsletter();
-        Assert.assertTrue(newsletterList.size() >= 1);
+        NewsletterData newsletterData = new NewsletterData();
+        newsletterData.setCreatedAt(new Date());
+        newsletterData.persist();
+        newsletterData.flush();
+        List<NewsletterData> newsletterDataList = NewsletterData.findAllNewsletter();
+        Assert.assertTrue(newsletterDataList.size() >= 1);
     }
 }

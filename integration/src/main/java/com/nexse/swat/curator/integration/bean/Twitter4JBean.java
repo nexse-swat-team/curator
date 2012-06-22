@@ -15,14 +15,17 @@ import java.util.List;
  */
 @Service
 public class Twitter4JBean {
-    public List<Status> getTweet() throws TwitterException {
-        ConfigurationBuilder cb = new ConfigurationBuilder();
+    private static final ConfigurationBuilder cb = new ConfigurationBuilder();
+    private static final TwitterFactory tf;
+    static{
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("piGhOMjSY0jusQkGQwK4rg")
                 .setOAuthConsumerSecret("K9i2XhHqGFZCAhuH9o2bRPSWduvKWkjfSEehRH4")
                 .setOAuthAccessToken("377414520-QR3HfosRA5ZJNrmT4elD6J9eAPNQGm154JAh84ks")
                 .setOAuthAccessTokenSecret("LXCQyLd9pBWf6pTbuHisz9mZLJ4qWjlNfNKtJYHkkkE");
-        TwitterFactory tf = new TwitterFactory(cb.build());
+        tf = new TwitterFactory(cb.build());
+    }
+    public List<Status> getTweet() throws TwitterException {
         Twitter twitter = tf.getInstance();
         Paging paging = new Paging(1,100);
         List<Status> statuses = twitter.getUserTimeline(paging);

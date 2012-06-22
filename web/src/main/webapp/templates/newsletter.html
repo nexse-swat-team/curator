@@ -380,11 +380,13 @@
     <tr valign="top">
         <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
     </tr>
+    <%if(categoryArt.abstractTxt!==null){%>
     <tr valign="top">
         <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;">
             <%=categoryArt.abstractTxt%>
         </td>
     </tr>
+    <%}%>
     <tr valign="top">
         <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
     </tr>
@@ -757,7 +759,6 @@
 </td>
 </tr>
 <%}%>
-<!--
 <tr>
     <td>
         <table border="0" cellpadding="0" cellspacing="0" width="670" class="frame footer"
@@ -771,24 +772,10 @@
                 <td class="footer_body media_footer"
                     style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #777; text-shadow: 0 1px 0 #ffffff;">
                     <div>
-                        Forgot your Twitter password?
+                        Non visualizzi correttamente questa mail?
                         <a class="reset"
-                           href="https://twitter.com/account/resend_password?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+24+20120603"
-                           style="border: none; color: #0084b4; text-decoration: none;">Get instructions on how to reset
-                            it.</a>
-                    </div>
-                    <div>
-                        You can also
-                        <a href="https://twitter.com/i/u?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+26+20120603&sig=c0ba0139d0627696cc5f2f78a282cb76286c8ad4"
-                           style="border: none; color: #0084b4; text-decoration: none;">unsubscribe to these emails</a>.
-                        Need
-                        <a href="https://support.twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+97+20120603"
-                           style="border: none; color: #0084b4; text-decoration: none;">help</a>?
-                    </div>
-                    <div>
-                        <a href="#" class="address"
-                           style="border: none; color: #0084b4; text-decoration: none;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; font-size: 11px; line-height: 17px; color: #999999; text-shadow: 0 1px 0 #ffffff;">Twitter,
-                            Inc. 795 Folsom St., Suite 600 <span class="nobreak" style="white-space: nowrap;">San Francisco, CA 94107</span></a>
+                           href="newsletter?token=<%=token%>"
+                           style="border: none; color: #0084b4; text-decoration: none;">Leggila on line</a>
                     </div>
                 </td>
                 <td class="col cut" style="width: 75px;"></td>
@@ -800,7 +787,6 @@
         </table>
     </td>
 </tr>
--->
 </tbody>
 </table>
 </td>

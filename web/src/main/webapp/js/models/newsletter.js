@@ -5,6 +5,7 @@ define([
 ], function ($, _, Backbone) {
     var newsletter = {};
 
+
     return newsletter;
 
 })

@@ -27,8 +27,19 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <servlet>
+        <servlet-name>NewsletterVisualizatorServlet</servlet-name>
+        <servlet-class>
+            com.nexse.swat.curator.web.services.NewsletterVisualizatorServlet
+        </servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>CXFServlet</servlet-name>
         <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsletterVisualizatorServlet</servlet-name>
+        <url-pattern>/newsletter</url-pattern>
     </servlet-mapping>
 </web-app>

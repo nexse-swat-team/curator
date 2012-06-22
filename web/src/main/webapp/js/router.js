@@ -7,9 +7,8 @@ define([
     'views/enrichedDataList',
     'views/newsletter',
     'models/channelData',
-    'models/enrichedData',
-    'models/newsletter'
-], function ($, _, Backbone, ChannelDataListView, EnrichedDataListView, NewsletterView, channelDataModule, enrichedDataModule, newsletter) {
+    'models/enrichedData'
+], function ($, _, Backbone, ChannelDataListView, EnrichedDataListView, NewsletterView, channelDataModule, enrichedDataModule) {
 
     var pag1, pag2;
 

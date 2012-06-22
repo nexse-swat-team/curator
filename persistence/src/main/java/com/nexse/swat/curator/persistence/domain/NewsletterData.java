@@ -1,7 +1,5 @@
 package com.nexse.swat.curator.persistence.domain;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +10,7 @@ import java.util.List;
 
 @Configurable
 @Entity
-public class Newsletter {
+public class NewsletterData {
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
     @Version
@@ -27,8 +25,10 @@ public class Newsletter {
     @Column(columnDefinition="TEXT")
     private String body;
     private String time;
+    @Column(unique = true)
+    private String token;
 
-    public Newsletter() {
+    public NewsletterData() {
     }
 
     public Date getCreatedAt() {
@@ -67,29 +67,32 @@ public class Newsletter {
     transient EntityManager entityManager;
 
     public static final EntityManager entityManager() {
-        EntityManager em = new Newsletter().entityManager;
+        EntityManager em = new NewsletterData().entityManager;
         if (em == null)
             throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;
     }
 
     public static long countNewsletter() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Newsletter o", Long.class).getSingleResult();
+        return entityManager().createQuery("SELECT COUNT(o) FROM NewsletterData o", Long.class).getSingleResult();
     }
 
-    public static List<Newsletter> findNewsletterEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Newsletter o", Newsletter.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    public static List<NewsletterData> findNewsletterEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM NewsletterData o", NewsletterData.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
 
-    public static Newsletter findNewsletter(Long id) {
+    public static NewsletterData findNewsletter(Long id) {
         if (id == null) return null;
-        return entityManager().find(Newsletter.class, id);
+        return entityManager().find(NewsletterData.class, id);
     }
 
-    public static List<Newsletter> findAllNewsletter() {
-        return entityManager().createQuery("SELECT o FROM Newsletter o order by o.createdAt desc", Newsletter.class).getResultList();
+    public static List<NewsletterData> findAllNewsletter() {
+        return entityManager().createQuery("SELECT o FROM NewsletterData o order by o.createdAt desc", NewsletterData.class).getResultList();
     }
 
+    public static NewsletterData findNewsletterByToken(String token) {
+        return entityManager().createQuery("SELECT o FROM NewsletterData o where o.token=:token", NewsletterData.class).setParameter("token",token).getSingleResult();
+    }
 
     public void setVersion(Integer version) {
         this.version = version;
@@ -97,6 +100,14 @@ public class Newsletter {
 
     public Integer getVersion() {
         return this.version;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @Transactional
@@ -117,15 +128,15 @@ public class Newsletter {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Newsletter attached = Newsletter.findNewsletter(this.id);
+            NewsletterData attached = NewsletterData.findNewsletter(this.id);
             this.entityManager.remove(attached);
         }
     }
 
     @Transactional
-    public Newsletter merge() {
+    public NewsletterData merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
-        Newsletter merged = this.entityManager.merge(this);
+        NewsletterData merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
     }
@@ -141,9 +152,9 @@ public class Newsletter {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Newsletter)) return false;
+        if (!(o instanceof NewsletterData)) return false;
 
-        Newsletter channelData = (Newsletter) o;
+        NewsletterData channelData = (NewsletterData) o;
 
         if (id != null ? !id.equals(channelData.id) : channelData.id != null) return false;
 
@@ -157,12 +168,13 @@ public class Newsletter {
 
     @Override
     public String toString() {
-        return "Newsletter{" +
+        return "NewsletterData{" +
                 "version=" + version +
                 ", id=" + id +
                 ", createdAt=" + createdAt +
                 ", body='" + body + '\'' +
                 ", time='" + time + '\'' +
+                ", token='" + token + '\'' +
                 ", entityManager=" + entityManager +
                 '}';
     }
