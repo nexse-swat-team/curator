@@ -12,7 +12,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="classpath:META-INF/cxf/cxf.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-    <import resource="classpath:META-INF/spring/curator/persistence-context.xml" />
+    <import resource="classpath:META-INF/spring/camel-context.xml" />
 
     <context:annotation-config/>
     <!--<context:component-scan base-package="com.nexse.swat.curator.web" />-->
@@ -27,4 +27,31 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     </jaxrs:server>
 
     <bean id="restService" class="com.nexse.swat.curator.web.services.RestService" />
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="mail.nexse.com"/>
+        <property name="port" value="465"/>
+        <property name="username" value="mirko.caserta"/>
+        <property name="password" value="ax43bx"/>
+        <property name="protocol" value="smtps"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.connectiontimeout">5000</prop>
+                <prop key="mail.smtp.sendpartial">true</prop>
+                <prop key="mail.smtp.userset">true</prop>
+                <prop key="mail.mime.charset">UTF-8</prop>
+                <prop key="mail.smtp.isSecure">true</prop>
+                <prop key="mail.smtp.requiresAuthentication">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.port">465</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.socketFactory.fallback">false</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>

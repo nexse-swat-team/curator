@@ -27,7 +27,7 @@ public class Twitter4JBean {
     }
     public List<Status> getTweet() throws TwitterException {
         Twitter twitter = tf.getInstance();
-        Paging paging = new Paging(1,100);
+        Paging paging = new Paging(1,10);
         List<Status> statuses = twitter.getUserTimeline(paging);
 
         return statuses;

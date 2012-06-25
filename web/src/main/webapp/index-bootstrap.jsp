@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<script>
+    window.baseURL = "<%="http://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()%>";
+</script>
 <html lang="en">
 <head>
     <meta charset="utf-8">

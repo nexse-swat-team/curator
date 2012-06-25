@@ -33,6 +33,7 @@ define([
                 nw = window.open();
             tmp["data"]=this.model;
             tmp["token"]=randomUUID();
+            tmp["baseURL"]=window.baseURL;
             newsletter.data = tpl(tmp);
             newsletter.token= tmp["token"];
             nw.document.write(newsletter.data);

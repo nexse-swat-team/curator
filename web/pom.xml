@@ -19,6 +19,11 @@
         </dependency>
         <dependency>
             <groupId>com.nexse.swat.curator</groupId>
+            <artifactId>curator-integration</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nexse.swat.curator</groupId>
             <artifactId>curator-persistence</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
@@ -26,6 +31,23 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
         </dependency>
+        <!--
+                <dependency>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-javamail_1.4_spec</artifactId>
+                </dependency>
+        -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+<!--
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-activation_1.1_spec</artifactId>
+        </dependency>
+-->
     </dependencies>
     <build>
         <finalName>dimorphoteca</finalName>

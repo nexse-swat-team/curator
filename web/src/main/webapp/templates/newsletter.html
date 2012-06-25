@@ -164,7 +164,7 @@
        style="border: 0px; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; background-color: #ffffff;position: relative;">
 <tbody>
 <tr>
-    <td><a href="https://twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+21+20120603"
+    <td><a href="https://twitter.com/#!/NexseSwatTeam"
            style="border: none; color: #0084b4; text-decoration: none;"><span class="media_logo_div"></span></a>
         <table cellpadding="0" cellspacing="0" border="0" width="670" class="header frame"
                style="background-color: #f2f2f2;">
@@ -173,7 +173,7 @@
                 <td class="header_left cut" style="width: 19px; height: 77px;"></td>
                 <td height="94" width="46" valign="top" rowspan="2" class="logo_header cut"
                     style="background-color: #ffffff; line-height: 100%;"><a
-                        href="https://twitter.com/?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+21+20120603"
+                        href="https://twitter.com/#!/NexseSwatTeam"
                         style="border: none; color: #0084b4; text-decoration: none;"><img class="logo cut"
                                                                                           src="https://twitter.com/images/email/t1/ribbon.png"
                                                                                           width="46" height="94"
@@ -183,11 +183,11 @@
                 <td width="458" height="77" class="main_header media_header"
                     style="padding-left: 10px; padding-right: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333;">
                     <span class="main_name"
-                          style="font-size: 14px; line-height: 16px; font-weight: bold; color: #000000;">Nexse SWAT Team,</span><br/>
-                    <span class="subtitle" style="font-size: 14px; color: #666666; line-height: 16px;"> Here's what's happening on Twitter </span>
+                          style="font-size: 14px; line-height: 16px; font-weight: bold; color: #000000;">Ciao,</span><br/>
+                    <span class="subtitle" style="font-size: 14px; color: #666666; line-height: 16px;">eccoti un po' di spunti di lettura per oggi:</span>
                 </td>
                 <td class="main_avatar cut" width="32" style="text-align: right; padding-right: 10px;"><a
-                        href="https://twitter.com/NexseSwatTeam?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+22+20120603"
+                        href="https://twitter.com/#!/NexseSwatTeam"
                         style="border: none; color: #0084b4; text-decoration: none;"><img class="cut"
                                                                                           src="https://si0.twimg.com/profile_images/1556486050/japan-flag_reasonably_small.png"
                                                                                           width="32" height="32"
@@ -331,7 +331,7 @@
     </tbody>
 </table>
 <%for (var i = 0; i < data[category].length; i++) {
-    var categoryArt = data[category][i].toJSON();
+var categoryArt = data[category][i].toJSON();
 %>
 <hr width="520" height="1" class="tweet-separator"
     style="border: 0; margin: 0 auto; color: #e8e8e8; background-color: #e8e8e8; height: 1px;"/>
@@ -357,12 +357,12 @@
         <td>
             <a href="http://twitter.com/<%=categoryArt.channelData.fromUserScreenName%>" target="_blank"
                style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-name"
-                                                                                  style="font-size: 14px; font-weight: bold; color: #333;">Peter Seibel</span></a>
-<!--
-            <a href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+143+20120603"
-               style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
-                                                                                  style="font-size: 12px; color: #999;">@peterseibel</span></a>
--->
+                                                                                  style="font-size: 14px; font-weight: bold; color: #333;"><%=categoryArt.author%></span></a>
+            <!--
+                        <a href="https://twitter.com/peterseibel/status/207480004102193152?uid=377414520&iid=cf002108-f46f-4d81-9d1c-6a2f772ba8ff&nid=12+143+20120603"
+                           style="border: none; color: #0084b4; text-decoration: none;"><span class="tweet-screen-name"
+                                                                                              style="font-size: 12px; color: #999;">@peterseibel</span></a>
+            -->
         </td>
         <td align="right" valign="middle" class="tweet-date" style="font-size: 12px; color: #bbb; width: 50px;"><span
                 style="color: #bbb;"><%=categoryArt.channelData.time%></span></td>
@@ -761,31 +761,67 @@
 <%}%>
 <tr>
     <td>
-        <table border="0" cellpadding="0" cellspacing="0" width="670" class="frame footer"
-               style="background-color: #eeeeee;">
+        <table cellpadding="0" cellspacing="0" width="520" align="center" class="action"
+               style="border-radius: 5px; background-color: #ededed; padding: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333;">
             <tbody>
             <tr>
-                <td colspan="3" height="28" class="footer-padding-top" style="border-top: 1px solid #dddddd;"></td>
-            </tr>
-            <tr>
-                <td class="col cut" style="width: 75px;"></td>
-                <td class="footer_body media_footer"
-                    style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #777; text-shadow: 0 1px 0 #ffffff;">
-                    <div>
-                        Non visualizzi correttamente questa mail?
-                        <a class="reset"
-                           href="newsletter?token=<%=token%>"
-                           style="border: none; color: #0084b4; text-decoration: none;">Leggila on line</a>
-                    </div>
-                </td>
-                <td class="col cut" style="width: 75px;"></td>
-            </tr>
-            <tr>
-                <td colspan="3" class="footer-padding-bottom" height="25"></td>
+                <td class="cut"><span class="action_tip"
+                                      style="font-size: 14px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; text-shadow: 0 1px 0 #fff;"><strong>Non
+                    perderti nulla.</strong> Resta aggiornato su ci&ograve; che sta succedendo.</span></td>
+                <td align="right"><a class="button_link"
+                                     href="https://twitter.com/#!/NexseSwatTeam" target="_blank"
+                                     style="border: none; color: #0084b4; text-decoration: none;border: none;">
+                    <table border="0" cellpadding="0" cellspacing="0"
+                           background="https://twitter.com/images/email/t1/button_bg.png" class="button media_button"
+                           style="background-color: #33a9e5; border-radius:5px; border: 1px solid #2288cc; padding: 5px 16px 5px 16px; text-align: center; height: 28px;">
+                        <tbody>
+                        <tr>
+                            <td style="color: #ffffff; font-size: 13px; font-weight: bold; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                                Seguici su twitter
+                            </td>
+                        <tr>
+                        </tbody>
+                    </table>
+                </a></td>
             </tr>
             </tbody>
         </table>
     </td>
+</tr>
+<td>
+    <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="670"
+           class="frame footer"
+           style="background-color: #eeeeee; background-image: url(https://twitter.com/images/email/t1/shadow_bottom.jpg); background-position: top; background-repeat: repeat-x; border-top-color: #dddddd; border-top-style: solid; border-top-width: 1px;">
+        <tbody>
+        <tr>
+            <td colspan="4" height="28" class="footer-padding-top"></td>
+        </tr>
+        <tr>
+            <td class="col cut" style="width: 75px;"></td>
+            <td width="10" class="cut"></td>
+            <td class="footer_body media_footer"
+                style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 17px; color: #777; text-shadow: 0 1px 0 #ffffff;">
+                <div>
+                    Non visualizzi correttamente questa mail?
+                    <a class="reset"
+                       href="<%=baseURL%>/newsletter?token=<%=token%>"
+                       style="border: none; color: #0084b4; text-decoration: none;">Leggila
+                        on line</a>
+                </div>
+                <div>
+                    <a href="http://swat.nexse.com" class="address"
+                       style="border: none; color: #0084b4; text-decoration: none;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; font-size: 11px; line-height:17px; color: #999999; text-shadow: 0 1px 0 #ffffff;">
+                        Nexse SWAT Team</a>
+                </div>
+            </td>
+            <td class="col cut" style="width: 75px;"></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="footer-padding-bottom" height="25"></td>
+        </tr>
+        </tbody>
+    </table>
+</td>
 </tr>
 </tbody>
 </table>
