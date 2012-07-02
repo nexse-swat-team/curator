@@ -27,7 +27,7 @@ public class NewsletterData {
     @Column(unique = true)
     private String token;
     @Column(columnDefinition="TEXT")
-    private String to;
+    private String recipients;
 
 
     public NewsletterData() {
@@ -109,12 +109,12 @@ public class NewsletterData {
         this.token = token;
     }
 
-    public String getTo() {
-        return to;
+    public String getRecipients() {
+        return recipients;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setRecipients(String to) {
+        this.recipients = to;
     }
 
     @Transactional

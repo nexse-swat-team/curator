@@ -10,7 +10,6 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 
 import javax.mail.internet.MimeMessage;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,7 +33,7 @@ public class MailService {
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
             public void prepare(MimeMessage mimeMessage) throws Exception {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-                message.setBcc(newsletterData.getTo().split(","));
+                message.setBcc(newsletterData.getRecipients().split(","));
                 message.setFrom(getFrom());
                 message.setSubject(getSubject() + " " +sdf.format(newsletterData.getCreatedAt()));
                 message.setText(newsletterData.getBody(), true);

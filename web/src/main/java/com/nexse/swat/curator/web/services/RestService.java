@@ -28,7 +28,7 @@ public class RestService {
     @GET
     @Path("/channeldata/")
     public AjaxResponse<List<ChannelData>> getChannelData() {
-        List<ChannelData> channelDataList = ChannelData.findAllChannelData();
+        List<ChannelData> channelDataList = ChannelData.findAllChannelData(0,300);
         return new AjaxResponse<List<ChannelData>>("true",channelDataList);
     }
 

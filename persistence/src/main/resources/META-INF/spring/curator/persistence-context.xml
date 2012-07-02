@@ -50,13 +50,13 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
                 <property name="showSql" value="true"/>
                 <property name="generateDdl" value="true"/>
             </bean>
         </property>
         <property name="jpaProperties">
             <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
             </props>
         </property>

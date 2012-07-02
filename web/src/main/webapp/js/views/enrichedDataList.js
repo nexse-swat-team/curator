@@ -51,12 +51,12 @@ define([
              */
         },
         clickSendToMails:function () {
-            newsletter.to = $("#mails")[0].value;
+            newsletter.recipients = $("#mails")[0].value;
             $.ajax({
                 url:"services/rest/newsletter/",
                 type:'PUT',
                 contentType:'application/json',
-                data:JSON.stringify({body:newsletter.data, token:newsletter.token, to:newsletter.to}),
+                data:JSON.stringify({body:newsletter.data, token:newsletter.token, recipients:newsletter.recipients}),
                 dataType:'json'
             }).done(function (data) {
                     $("#newsletter-data").modal("hide");

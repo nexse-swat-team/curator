@@ -183,6 +183,10 @@ public class ChannelData {
         return entityManager().createQuery("SELECT o FROM ChannelData o order by o.createdAt desc", ChannelData.class).getResultList();
     }
 
+    public static List<ChannelData> findAllChannelData(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM ChannelData o order by o.createdAt desc", ChannelData.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+
     public static List<ChannelData> findAllOrderedChannelData() {
         return entityManager().createNativeQuery("select * from CHANNEL_DATA",ChannelData.class).getResultList();
     }
