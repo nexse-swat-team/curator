@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.Email;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -20,8 +21,9 @@ import java.util.List;
 
 public class RestService {
     private static Logger logger = LoggerFactory.getLogger(RestService.class);
+
     @Autowired
-    private JavaMailSender mailSender;
+    private MailService mailService;
 
     @GET
     @Path("/channeldata/")
@@ -48,17 +50,9 @@ public class RestService {
     @PUT
     @Path("/newsletter/")
     public AjaxResponse<String> sendNewsletter(final NewsletterData newsletterData) {
-        MimeMessagePreparator preparator = new MimeMessagePreparator() {
-            public void prepare(MimeMessage mimeMessage) throws Exception {
-                MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-                message.setBcc(new String[]{"germano.giudici@nexse.com","mirko.caserta@nexse.com"});
-                message.setFrom("swat@nexse.com");
-                message.setSubject("Cum Grano Salis "+new Date());
-                message.setText(newsletterData.getBody(),true);
-            }
-        };
         try {
-            this.mailSender.send(preparator);
+            newsletterData.setCreatedAt(new Date());
+            this.mailService.send(newsletterData);
         } catch (MailException e) {
             logger.error(newsletterData.toString(),e);
             return new AjaxResponse("false",e.getMessage());

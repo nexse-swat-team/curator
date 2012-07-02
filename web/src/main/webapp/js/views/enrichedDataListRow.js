@@ -59,7 +59,10 @@ define([
         savetext:function (event) {
             //var selectedTxt = getSelectedTxt("#en-"+this.model.id+"-article .modal-body");
             var selectedTxt = x.Selector.getSelected();
-            $("#en-" + this.model.id + "-abstract").val(selectedTxt);
+            var abstract = $("#en-" + this.model.id + "-abstract");
+            abstract.val(selectedTxt);
+            abstract.trigger('change');
+            $("#en-" + this.model.id + "-article").modal("hide");
 
         },
         closeEnriched:function (event) {

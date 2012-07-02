@@ -11,7 +11,7 @@ define([
     return Backbone.View.extend({
         el:("#page"),
 
-        initialize:function(){
+        initialize:function () {
             this.$el.empty();
         },
 
@@ -26,24 +26,41 @@ define([
 
         events:{
             "click #create_newsletter":"clickCreateNewsletter",
-            "click #send_newsletter":"clickSendNewsletter"
+            "click #send_newsletter":"clickSendNewsletter",
+            "click #send_to_mails":"clickSendToMails"
         },
 
         clickCreateNewsletter:function (e) {
             //window.app_router.navigate("createNewsletter", {trigger:true})
-            var newsletter=_.groupBy(enrichedDataModule.enrichedDataCollection.models, function(model){
+            var newsletter = _.groupBy(enrichedDataModule.enrichedDataCollection.models, function (model) {
                 return model.get("category");
             });
             new NewsletterView({model:newsletter}).render();
         },
-        clickSendNewsletter:function (e) {
+        clickSendNewsletter:function () {
+            $("#newsletter-data").modal("show");
+
+            /*
+             $.ajax({
+             url: "services/rest/newsletter/",
+             type: 'PUT',
+             contentType: 'application/json',
+             data: JSON.stringify({body:newsletter.data,token:newsletter.token,to:newsletter.to}),
+             dataType: 'json'
+             })
+             */
+        },
+        clickSendToMails:function () {
+            newsletter.to = $("#mails")[0].value;
             $.ajax({
-                url: "services/rest/newsletter/",
-                type: 'PUT',
-                contentType: 'application/json',
-                data: JSON.stringify({body:newsletter.data,token:newsletter.token}),
-                dataType: 'json'
-            })
+                url:"services/rest/newsletter/",
+                type:'PUT',
+                contentType:'application/json',
+                data:JSON.stringify({body:newsletter.data, token:newsletter.token, to:newsletter.to}),
+                dataType:'json'
+            }).done(function (data) {
+                    $("#newsletter-data").modal("hide");
+                })
         }
 
     });

@@ -3,10 +3,23 @@
     </div>
     <div id="body">
     </div>
-    <div>
-        <button class="btn" id="create_newsletter">create newsletter<i class="icon-forward"></i></button>
-    </div>
-    <div>
+
+    <div class="form-actions">
+        <button class="btn btn-primary" id="create_newsletter">create newsletter<i class="icon-forward"></i></button>
         <button class="btn" id="send_newsletter">send newsletter<i class="icon-forward"></i></button>
     </div>
+
+    <div id="newsletter-data" class="modal hide fade" style="display: none; ">
+        <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3>Emails</h3>
+        </div>
+        <div class="modal-body">
+            <textarea class="input-xlarge" id="mails" rows="10" style="width:90%"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button id="send_to_mails" class="btn">Send</button>
+        </div>
+    </div>
+
 </div>

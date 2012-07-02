@@ -24,9 +24,11 @@ public class NewsletterData {
     private Date createdAt;
     @Column(columnDefinition="TEXT")
     private String body;
-    private String time;
     @Column(unique = true)
     private String token;
+    @Column(columnDefinition="TEXT")
+    private String to;
+
 
     public NewsletterData() {
     }
@@ -51,9 +53,6 @@ public class NewsletterData {
         return getCreatedAt()!=null?simpleDateFormat.format(getCreatedAt()):null;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
 
     public String getBody() {
         return body;
@@ -108,6 +107,14 @@ public class NewsletterData {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 
     @Transactional
@@ -173,7 +180,6 @@ public class NewsletterData {
                 ", id=" + id +
                 ", createdAt=" + createdAt +
                 ", body='" + body + '\'' +
-                ", time='" + time + '\'' +
                 ", token='" + token + '\'' +
                 ", entityManager=" + entityManager +
                 '}';
