@@ -387,6 +387,12 @@ var categoryArt = data[category][i].toJSON();
         </td>
     </tr>
     <%}%>
+    <%if(categoryArt.link!==null){%>
+    <tr valign="top">
+        <td colspan="2" class="tweet-context" style="font-size: 12px; color: #999;">
+            <a href="<%=categoryArt.link%>" style="border:none;color:#0084b4;text-decoration:none" target="_blank"><span style="font-size:12px">Visualizza i dettagli</span></a>        </td>
+    </tr>
+    <%}%>
     <tr valign="top">
         <td height="4" class="tweet-padding padding" style="background-color: white;"></td>
     </tr>
