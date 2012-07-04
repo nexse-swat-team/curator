@@ -22,7 +22,7 @@ public class NewsletterData {
     private Long id;
     @Column(unique = true)
     private Date createdAt;
-    @Column(columnDefinition="TEXT")
+    @Column(columnDefinition="MEDIUMTEXT")
     private String body;
     @Column(unique = true)
     private String token;

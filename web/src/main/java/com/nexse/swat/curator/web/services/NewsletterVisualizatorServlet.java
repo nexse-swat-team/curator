@@ -20,7 +20,7 @@ public class NewsletterVisualizatorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String token = req.getParameter("token");
         NewsletterData newsletterData = NewsletterData.findNewsletterByToken(token);
-        resp.setContentType("text/html");
+        resp.setContentType("text/html; charset=utf-8");
         resp.getWriter().print(newsletterData.getBody());
     }
 
