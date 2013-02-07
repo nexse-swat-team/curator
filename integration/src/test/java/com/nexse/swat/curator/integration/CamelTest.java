@@ -2,10 +2,10 @@ package com.nexse.swat.curator.integration;
 
 import org.apache.camel.Produce;
 import org.apache.camel.ProducerTemplate;
-import org.apache.camel.test.junit4.CamelSpringTestSupport;
+import org.apache.camel.test.junit4.CamelSpringJUnit4ClassRunner;
 import org.junit.Test;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,14 +15,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * To change this template use File | Settings | File Templates.
  */
 
-public class CamelTest extends CamelSpringTestSupport {
+
+@RunWith(CamelSpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:META-INF/spring/camel-context.xml")
+public class CamelTest{
     @Produce(uri="direct:process")
     ProducerTemplate producerTemplate;
-
-    @Override
-    protected AbstractApplicationContext createApplicationContext() {
-        return new ClassPathXmlApplicationContext("META-INF/spring/camel-context.xml");
-    }
 
     @Test
     public void twitterBeanTest(){

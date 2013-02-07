@@ -7,7 +7,7 @@
     <parent>
         <artifactId>curator-parent</artifactId>
         <groupId>com.nexse.swat.curator</groupId>
-        <version>0.1</version>
+        <version>0.2</version>
     </parent>
 
 
@@ -53,7 +53,7 @@
         <!-- for testing -->
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-test</artifactId>
+            <artifactId>camel-test-spring</artifactId>
             <version>${camel-version}</version>
             <scope>test</scope>
         </dependency>

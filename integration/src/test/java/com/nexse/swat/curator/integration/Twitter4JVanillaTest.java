@@ -20,8 +20,8 @@ public class Twitter4JVanillaTest {
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("piGhOMjSY0jusQkGQwK4rg")
                 .setOAuthConsumerSecret("K9i2XhHqGFZCAhuH9o2bRPSWduvKWkjfSEehRH4")
-                .setOAuthAccessToken("377414520-QR3HfosRA5ZJNrmT4elD6J9eAPNQGm154JAh84ks")
-                .setOAuthAccessTokenSecret("LXCQyLd9pBWf6pTbuHisz9mZLJ4qWjlNfNKtJYHkkkE");
+                .setOAuthAccessToken("377414520-lWOnNiGZQlJ1Ybua2ngdBRzrZrHnUKFaInAmgJYG")
+                .setOAuthAccessTokenSecret("0x4CMfiRvraWNCWAWxVuOKNUCeB7Hgt50cJWpS5nyrg");
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
         User user = twitter.verifyCredentials();
