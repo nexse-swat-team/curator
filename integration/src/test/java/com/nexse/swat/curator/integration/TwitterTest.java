@@ -1,5 +1,6 @@
 package com.nexse.swat.curator.integration;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.social.twitter.api.Tweet;
 import org.springframework.social.twitter.api.Twitter;
@@ -19,6 +20,7 @@ import static org.junit.Assert.assertTrue;
  * To change this template use File | Settings | File Templates.
  */
 public class TwitterTest {
+    @Ignore
     @Test
     public void testSWATAuthTwitterTimeline() {
         String consumerKey = "piGhOMjSY0jusQkGQwK4rg"; // The application's consumer key
