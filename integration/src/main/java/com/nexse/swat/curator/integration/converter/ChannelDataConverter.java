@@ -18,21 +18,21 @@ import twitter4j.User;
 public class ChannelDataConverter {
 
     @Converter
-    public static ChannelData toChannelData(Tweet tweet){
+    public static ChannelData toChannelData(Tweet tweet) {
 
         ChannelData channelData = new ChannelData();
-        BeanUtils.copyProperties(tweet,channelData,new String[]{"id"});
+        BeanUtils.copyProperties(tweet, channelData, new String[]{"id"});
         channelData.setOriginalId(tweet.getId());
         return channelData;
     }
 
     @Converter
-    public static ChannelData toChannelData(Status status){
+    public static ChannelData toChannelData(Status status) {
         ChannelData channelData = new ChannelData();
         User user;
-        if(status.isRetweetedByMe()){
+        if (status.getRetweetedStatus() != null && status.getRetweetedStatus().getUser() != null) {
             user = status.getRetweetedStatus().getUser();
-        }else{
+        } else {
             user = status.getUser();
         }
         channelData.setFromUser(user.getName());
